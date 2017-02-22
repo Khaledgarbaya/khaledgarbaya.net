@@ -1,9 +1,8 @@
 import React from 'react'
-import SingleArticle from './articles/SingleArticle'
+import ArticleList from './article/ArticleList'
+
 export default class Main extends React.Component {
   render () {
-    return (
-      <SingleArticle />
-    )
+    return this.props.children
   }
 }

@@ -2,16 +2,13 @@
   "name": "khaled-garbaya.net",
   "version": "0.0.1",
   "description": "khaledgarbaya.net built using React and Contentful the Headless CMS",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "scripts": {
-    "start" : "webpack-dev-server --host=0.0.0.0 --port=9090 --inline --hot --open"
-  },
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Khaledgarbaya/khaled-garbaya.net.git"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --host=0.0.0.0 --port=9090 --inline --hot"
   },
   "keywords": [
     "khaledgarbaya.net",
@@ -25,6 +22,8 @@
   },
   "homepage": "https://github.com/Khaledgarbaya/khaled-garbaya.net#readme",
   "dependencies": {
+    "contentful": "^3.8.0",
+    "marked": "^0.3.6",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^3.0.0"
