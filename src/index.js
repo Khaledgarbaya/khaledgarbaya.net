@@ -4,6 +4,8 @@ import Main from './Main'
 import {Router, IndexRoute, Route, browserHistory} from 'react-router'
 import ArticleList from './article/ArticleList'
 import SingleArticle from './article/SingleArticle'
+import './style/main.css'
+require('offline-plugin/runtime').install()
 
 render((
   <Router history={browserHistory}>

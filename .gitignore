@@ -5,3 +5,4 @@ node_modules
 # vim tmp
 *.swp
 *.swo
+dist

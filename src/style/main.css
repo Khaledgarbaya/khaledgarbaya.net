@@ -7462,7 +7462,6 @@ ol {
   padding: 15px;
   width: 100%;
   height: 350px;
-  background-image: url(../img/default-sidebar.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7644,7 +7643,6 @@ ol {
 .hero-image {
   height: 150px;
   width: 100%;
-  background-image: url(../img/default-single-hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
