@@ -26,7 +26,7 @@ module.exports = env => {
         {test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/},
         {
           test: /\.(eot|svg|ttf|woff|woff2|jpe?g$|svg$|png$)$/,
-          loader: 'file?name=[name].[ext]'
+          loader: 'file-loader?name=[name].[ext]'
         },
         {
           test: /\.css$/,
