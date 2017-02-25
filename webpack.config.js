@@ -44,12 +44,13 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: './index.html'
       }),
-      new OfflinePlugin(),
+      ifProd(new OfflinePlugin()),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: ifProd('"production"', '"development"')
         }
-      })
+      }),
+      ifProd(new webpack.optimize.UglifyJsPlugin({minimize: true}))
     ])
   }
   if (env.debug) {

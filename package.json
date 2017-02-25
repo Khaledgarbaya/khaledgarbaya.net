@@ -9,7 +9,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env.dev --host=0.0.0.0 --port=9090 --inline --hot",
-    "build": "webpack --env.prod -p"
+    "build": "webpack --env.prod",
+    "build:stats": "webpack --env.prod --json > stats.json",
+    "prebuild": "npm run clean",
+    "clean": "rimraf stats.json dist"
   },
   "keywords": [
     "khaledgarbaya.net",
@@ -44,6 +47,7 @@
     "inline-manifest-webpack-plugin": "^3.0.1",
     "offline-plugin": "^4.6.1",
     "progress-bar-webpack-plugin": "^1.9.3",
+    "rimraf": "^2.6.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
     "webpack-config-utils": "^2.3.0",
