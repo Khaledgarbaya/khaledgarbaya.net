@@ -1,8 +1,7 @@
-import { h, Component } from 'preact';
-import style from './style';
-import client from '../../lib/client'
-import ArticleListItem from '../../components/article/ArticleListItem'
-export default class Home extends Component {
+import React from 'react'
+import ArticleListItem from './ArticleListItem'
+import client from '../service/client'
+export default class ArticleList extends React.Component {
   constructor () {
     super()
     this.state = {articles: []}
