@@ -97,6 +97,23 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 900;
   font-family: Noble,Playfair Display,Georgia,serif
 }
+.main-nav__item a:hover {
+  border: none
+}
+
+.main-nav__item.current {
+  background: #f5ad8b;
+  color: #000
+}
+
+.main-nav__item.current a:hover {
+  background: #f5ad8b;
+  color: #000
+}
+.main-nav__item:hover {
+  background: #f5ad8b;
+  color: #000;
+}
 @media (min-width: 950px) {
   body.grid {
     width: 100%;
