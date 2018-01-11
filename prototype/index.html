@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body class='grid'>
+  <header class="main-header">
+        <h1 class="logo">
+                <a href="/" title="khaledgarbaya.net">
+                    <svg></svg>
+                </a>
+            </h1>
+        
+        <button class="menu-trigger" aria-controls="main-nav" aria-expanded="false" id="js-menu-trigger">Menu <span class="menu-trigger__icon" id="js-menu-trigger__icon" aria-hidden="true">+</span></button>
+<nav class="main-nav" id="main-nav">
+    <ul class="main-nav__list clearfix" id="menu">
+        <li class="main-nav__item "><a href="/hire/">Hire Me</a></li>
+        
+        <li class="main-nav__item "><a href="/case-studies/">Case Studies</a></li>
+        
+        <li class="main-nav__item "><a href="/speaking/">Speaking</a></li>
+        
+        <li class="main-nav__item "><a href="/workshops/">Training &amp; Workshops</a></li>
+        <li class="main-nav__item "><a href="/blog/">Articles</a></li>
+        
+        <li class="main-nav__item "><a href="/desk/">The Desk</a></li>
+    </ul>
+</nav>
+
+<script>
+    var menu_trigger = document.getElementById('js-menu-trigger'),
+        icon         = document.getElementById('js-menu-trigger__icon'),
+        body         = document.getElementsByTagName("body")[0],
+        open         = false;
+
+    menu_trigger.addEventListener('click', toggleMenu, false);
+
+    function toggleMenu(e) {
+        if(!open) {
+            open = true;
+            body.classList.add('open');
+            this.classList.add('active');
+            this.setAttribute('aria-expanded', 'true');
+            icon.innerHTML = "×";
+        }
+        else {
+            body.classList.remove('open');
+            this.classList.remove('active');
+            this.setAttribute('aria-expanded', 'false');
+            icon.innerHTML = "+";
+            open = false;
+        }
+    }
+</script>
+ 
+
+    </header>
+</body>
+</html>
