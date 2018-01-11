@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: Aaargh,Arial,sans-serif;
+  font-family: Fira,Arial,sans-serif;
   font-weight: 300;
   line-height: 1.7;
   color: #111;
@@ -93,6 +93,10 @@ body {
 ::selection {
   background: #f5ad8b
 }
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 900;
+  font-family: Noble,Playfair Display,Georgia,serif
+}
 @media (min-width: 950px) {
   body.grid {
     width: 100%;
@@ -129,6 +133,6 @@ body {
   src: url('./fonts/Nobile-Bold.ttf');
 }
 @font-face {
-  font-family: 'Aaargh';
-  src: url('./fonts/Aaargh.ttf');
+  font-family: 'Fira';
+  src: url('./fonts/FiraSans-Light.otf');
 }
