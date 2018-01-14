@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+}
+body {
+	font-family: $font_family_text;
+	font-weight: 300;
+	line-height: 1.7;
+	color: $dark_grey;
+	font-size: calc(14px + .25vw);
+	position: relative;
+	overflow-x: hidden;
+	margin: 0 auto;
+}
+::-moz-selection {
+	background: #f5ad8b;
+}
+::selection {
+	background: #f5ad8b;
+}
+h1 {
+	font-weight: 900;
+	font-family: $font_family_heading;
+}
+h2 {
+	font-weight: 900;
+	font-family: $font_family_heading;
+}
+h3 {
+	font-weight: 900;
+	font-family: $font_family_heading;
+}
+h4 {
+	font-weight: 900;
+	font-family: $font_family_heading;
+}
+h5 {
+	font-weight: 900;
+	font-family: $font_family_heading;
+}
+h6 {
+	font-weight: 900;
+	font-family: $font_family_heading;
+}

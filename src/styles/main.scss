@@ -1,0 +1,25 @@
+@import "fonts";
+@import "variables";
+@import "base";
+@import "components/header";
+
+@media (min-width: 950px) {
+	body.grid {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 5em 2em;
+	}
+	.main-content {
+		grid-column: 2/8;
+		grid-row: 2;
+	}
+}
+@media (min-width: 1024px) {
+	.logo {
+		grid-column: 2/3;
+	}
+	.main-nav__list {
+		display: flex;
+	}
+}
