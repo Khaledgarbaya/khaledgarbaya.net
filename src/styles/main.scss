@@ -2,9 +2,11 @@
 @import "variables";
 @import "base";
 @import "components/header";
+@import "components/article";
+@import "components/cobalt2";
 
 @media (min-width: 950px) {
-	body.grid {
+	.grid {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);

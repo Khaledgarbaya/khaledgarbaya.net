@@ -30,6 +30,11 @@
 	display: inline-block;
 	margin: 0;
 }
+.logo a {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
 .main-nav {
 	letter-spacing: 1px;
 	text-transform: uppercase;
