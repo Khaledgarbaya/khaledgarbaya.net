@@ -27,7 +27,7 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulBlog (limit:100) {
+    allContentfulBlog (sort:{fields: [publishDate], order: DESC}) {
       edges {
         node {
           title
