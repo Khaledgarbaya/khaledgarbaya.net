@@ -37,6 +37,10 @@
     padding: 0px 1em;
 }
 
+.articles-list ul {
+  list-style: none;
+}
+
 .articles-list li {
     margin-bottom: 4em;
 }
@@ -56,4 +60,15 @@
     display: block;
     margin-top: 0px;
     margin-bottom: 2em;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination:hover {
+  background: #f5ad8b;
+  color: #000;
+}
+.nextPost {
+  float: right;
 }
