@@ -47,8 +47,7 @@ const IndexPage = ({ data, pathContext }) => {
 }
 
 IndexPage.propTypes = {
-  data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired
 }
 
 export default IndexPage
