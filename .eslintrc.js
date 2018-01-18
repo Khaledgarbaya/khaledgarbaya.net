@@ -1,6 +1,6 @@
 module.exports = {
     "parser": "babel-eslint",
-    "extends": ["standard", "standard-preact"],
+    "extends": ["standard", "standard-react"],
     "parserOptions": {
       "ecmaFeatures": {
         "modules": true,
