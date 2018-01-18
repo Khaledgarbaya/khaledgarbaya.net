@@ -10,12 +10,20 @@ const TemplateWrapper = ({ children }) => (
     <Helmet
       title="Khaled Garbaya - doing Javascript and stuff!"
       meta={[
-        { name: 'description', content: 'Khaled Garbaya is a software developer and active open sorcerer. He speaks multiple languages and is often overheard saying "Bonjour" in HTML' },
-        { name: 'keywords', content: 'Khaled Garbaya, javascript, front-end, web developer, HTML5, CSS3, Berlin, Germany' },
+        {
+          name: 'description',
+          content:
+            'Khaled Garbaya is a software developer and active open sorcerer. He speaks multiple languages and is often overheard saying "Bonjour" in HTML',
+        },
+        {
+          name: 'keywords',
+          content:
+            'Khaled Garbaya, javascript, front-end, web developer, HTML5, CSS3, Berlin, Germany',
+        },
       ]}
     />
-    <div className='grid'>
-    <Header />
+    <div className="grid">
+      <Header />
       {children()}
     </div>
     <Footer />
