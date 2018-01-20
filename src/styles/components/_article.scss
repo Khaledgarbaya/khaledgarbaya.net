@@ -55,11 +55,12 @@
     border-width: 0.1em;
 }
 .post__meta {
-    color: rgb(51, 51, 51);
-    font-size: 0.8em;
-    display: block;
-    margin-top: 0px;
-    margin-bottom: 2em;
+  color: rgb(51, 51, 51);
+  font-size: 0.8em;
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
 }
 .pagination {
   display: inline-block;
