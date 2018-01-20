@@ -5,13 +5,14 @@
 @import "components/article";
 @import "components/cobalt2";
 @import "components/footer";
+@import "components/linksfooter";
 
 @media (min-width: 950px) {
 	.grid {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-gap: 5em 2em;
+		grid-gap: 2em 2em;
 	}
 	.main-content {
 		grid-column: 2/8;
