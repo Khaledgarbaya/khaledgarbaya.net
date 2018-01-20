@@ -3,28 +3,31 @@ import {Follow} from 'react-twitter-widgets';
 import SubscriptionForm from '../SubscriptionForm'
 
 const LinksFooter = () => (
-  <section className="links-footer">
-    <div className="connected">
+  <section className='links-footer'>
+    <div className='connected'>
       <h2>Newsletter</h2>
       <SubscriptionForm />
     </div>
-    <div className="social">
+    <div className='social'>
       <h2>Stay connected</h2>
-      <ul className="footer__links">
+      <ul className='footer__links'>
         <li>
-          <a href="/rss.xml">Articles RSS Feed</a>
+          <a href='/rss.xml'>Articles RSS Feed</a>
         </li>
         <li>
-          <a href="https://github.com/Khaledgarbaya">Github</a>
+          <a href='https://github.com/Khaledgarbaya'>Github</a>
         </li>
         <li>
-          <a href="https://instagram.com/khaledgarbaya">Instagram</a>
+          <a href='https://instagram.com/khaledgarbaya'>Instagram</a>
         </li>
         <li>
-          <a href="https://www.youtube.com/channel/UC_XsS8kgD9Y64ZOug4YKhpw">Youtube</a>
+          <a href='https://www.youtube.com/channel/UC_XsS8kgD9Y64ZOug4YKhpw'>Youtube</a>
+        </li>
+        <li>
+          <a href='https://www.linkedin.com/in/kgarbaya/'>Linkedin</a>
         </li>
       </ul>
-      <Follow username="khaled_garbaya" />
+      <Follow username='khaled_garbaya' />
     </div>
   </section>
 );
