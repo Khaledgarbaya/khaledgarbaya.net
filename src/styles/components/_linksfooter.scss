@@ -1,16 +1,18 @@
 .links-footer {
-   grid-column: 2/12;
-   display: grid;
-   grid-template-columns: 1fr;
-   @media (min-width: 640px) {
-     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-   }
+  border-top: 1px solid #03B9BC;
+  grid-column: 2/12;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 4em 0;
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  }
 }
 .links-footer li a {
-    display: block;
-    width: 100%;
-    border-bottom: 1px dotted;
-    text-decoration: none;
+  display: block;
+  width: 100%;
+  border-bottom: 1px dotted;
+  text-decoration: none;
 }
 
 .links-footer ul {
