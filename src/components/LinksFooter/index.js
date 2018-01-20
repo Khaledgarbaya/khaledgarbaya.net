@@ -12,7 +12,7 @@ const LinksFooter = () => (
       <h2>Stay connected</h2>
       <ul className="footer__links">
         <li>
-          <a href="#">Articles RSS Feed</a>
+          <a href="/rss.xml">Articles RSS Feed</a>
         </li>
         <li>
           <a href="https://github.com/Khaledgarbaya">Github</a>

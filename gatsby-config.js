@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'khaledgarbaya.net',
+    title: 'Khaled Garbaya\'s website',
+    description: 'Khaled Garbaya, doing javascript and stuff...',
+    siteUrl: 'https://khaledgarbaya.net'
   },
   plugins: [
     {
@@ -21,5 +23,59 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulBlog } }) => {
+              return allContentfulBlog.edges.map(edge => {
+                return Object.assign({}, edge.node, {
+                  description: edge.node.content.childMarkdownRemark.excerpt,
+                  url: site.siteMetadata.siteUrl + edge.node.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.slug,
+                  custom_elements: [{ "content:encoded": edge.node.content.childMarkdownRemark.html }],
+                });
+              });
+            },
+            query: `
+            {
+              allContentfulBlog(
+                limit: 1000,
+                sort: { order: DESC, fields: [publishDate] },
+              ) {
+                edges {
+                  node {
+                    content {
+                      childMarkdownRemark {
+                        excerpt
+                        html
+                      }
+                    }
+                    slug 
+                    title
+                    date: publishDate
+                  }
+                }
+              }
+            }
+          `,
+            output: "/rss.xml",
+          },
+        ],
+      },
+    }
   ],
-};
+}
