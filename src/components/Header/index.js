@@ -26,8 +26,14 @@ const Header = () => (
     <nav className="main-nav" id="main-nav">
       <ul className="main-nav__list clearfix" id="menu">
         <li className="main-nav__item ">
-          <a href="/" className="current">
+          <a href="/">
             Articles
+          </a>
+        </li>
+
+        <li className="main-nav__item ">
+          <a href="/about">
+            About me
           </a>
         </li>
 

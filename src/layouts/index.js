@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import LinksFooter from '../components/LinksFooter'
+
 import '../styles/main.scss'
 
 const TemplateWrapper = ({ children }) => (
@@ -25,8 +27,9 @@ const TemplateWrapper = ({ children }) => (
     <div className="grid">
       <Header />
       {children()}
+      <LinksFooter />
+      <Footer />
     </div>
-    <Footer />
   </div>
 )
 

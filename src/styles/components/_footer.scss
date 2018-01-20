@@ -1,11 +1,45 @@
 .footer {
-  grid-column: 2/12;
+  grid-column: 1/-1;
   text-align: center;
   border-top: 1px solid #03B9BC;
   padding: 4em 0;
-  margin-top: 4em;
 }
 .footer small {
   font-size: .75em;
   color: #888;
 }
+
+form input[type="email"] {
+  border: 1px solid #777;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 400;
+  padding: .5em 1em;
+  width: 60%;
+  margin: .75em 0 1.5em;
+  transition: all .2s ease-out;
+}
+
+form button {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  width:30%;
+  text-align: center;
+  font: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+  padding: 5px;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background: #dfdfdf;
+  color: #222;
+}
+
