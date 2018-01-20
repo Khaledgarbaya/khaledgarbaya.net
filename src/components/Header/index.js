@@ -5,7 +5,7 @@ const Header = () => (
   <header className="main-header">
     <h1 className="logo">
       <a href="/" title="khaledgarbaya.net">
-        <img src="/logo.svg" alt="logo" />
+        <img width='70' height='70' src="/logo.svg" alt="logo" />
       </a>
     </h1>
     <button
