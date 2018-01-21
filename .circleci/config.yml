@@ -40,6 +40,8 @@ jobs:
       - run: 
           name: deploy
           command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600"
+    branches:
+      only: master
 
   deploy-preview:
     docker:
@@ -49,7 +51,8 @@ jobs:
       - run: 
           name: deploy
           command: aws s3 sync public s3://preview.khaledgarbaya.net --delete --cache-control "max-age=3153600"
-
+    branches:
+      ignore: master
   invalidate-cache:
     docker:
       - image: circleci/node:7.10
@@ -57,18 +60,5 @@ jobs:
       - run: 
           name: invalidation
           command: aws cloudfront create-invalidation --cli-input-json "{\"DistributionId\":\"$CLOUD_FRONT_INSTANCE\",\"InvalidationBatch\":{\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]},\"CallerReference\":\"$(date +%s)\"}}"
-workflows:
-  version: 2
-  build_and_deploy_production:
-    jobs:
-      - build
-      - deploy-production
-      - invalidate-cache
     branches:
       only: master
-  build_and_deploy_preview:
-    jobs:
-      - build
-      - deploy-preview
-    branches:
-      ignore: master
