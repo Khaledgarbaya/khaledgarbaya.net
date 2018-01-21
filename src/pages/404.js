@@ -8,7 +8,7 @@ const NotFoundPage = () => (
   </div>
   <div className='notFound__animation'>
     <span className='notFound__four-left'>4</span>
-    <img className='notFound__img' width='300' height='300' src='logo.svg' />
+    <img className='notFound__img' width='300' height='300' src='/logo.svg' />
     <span className='notFound__four-right'>4</span>
   </div>
   </div>
