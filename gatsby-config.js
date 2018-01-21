@@ -48,6 +48,13 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: "UA-28940918-1",
+        anonymize: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
