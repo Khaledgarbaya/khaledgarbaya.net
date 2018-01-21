@@ -37,6 +37,16 @@ jobs:
       - image: circleci/node:7.10
 
     steps:
+      - run:
+          name: Install dependencies
+          working_directory: /
+          command: |
+            apt-get -y -qq update
+            apt-get -y -qq install python3.4-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
+            pip install awscli --upgrade --user
+
       - run: 
           name: deploy to production
           command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600"
@@ -46,6 +56,15 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:7.10
     steps:
+      - run:
+          name: Install dependencies
+          working_directory: /
+          command: |
+            apt-get -y -qq update
+            apt-get -y -qq install python3.4-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
+            pip install awscli --upgrade --user
       - run: 
           name: deploy ro preview
           command: aws s3 sync public s3://preview.khaledgarbaya.net --delete --cache-control "max-age=3153600"
