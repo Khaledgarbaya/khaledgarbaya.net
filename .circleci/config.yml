@@ -31,7 +31,7 @@ jobs:
       - run:
           name: build
           command: npm run build    
-  deploy-production:
+  deploy:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
@@ -43,7 +43,7 @@ jobs:
     branches:
       only: master
 
-  deploy-preview:
+  deploy:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
