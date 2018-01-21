@@ -6,6 +6,7 @@
 @import "components/cobalt2";
 @import "components/footer";
 @import "components/linksfooter";
+@import "components/fourOfour";
 
 @media (min-width: 950px) {
 	.grid {
@@ -15,7 +16,7 @@
 		grid-gap: 2em 2em;
 	}
 	.main-content {
-		grid-column: 2/8;
+		grid-column: 2/12;
 		grid-row: 2;
 	}
 }
