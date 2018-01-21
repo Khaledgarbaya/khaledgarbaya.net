@@ -31,28 +31,24 @@ jobs:
       - run:
           name: build
           command: npm run build    
-  deploy:
+  deploy-production:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
 
     steps:
       - run: 
-          name: deploy
+          name: deploy to production
           command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600"
-    branches:
-      only: master
 
-  deploy:
+  deploy-preview:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
     steps:
       - run: 
-          name: deploy
+          name: deploy ro preview
           command: aws s3 sync public s3://preview.khaledgarbaya.net --delete --cache-control "max-age=3153600"
-    branches:
-      ignore: master
   invalidate-cache:
     docker:
       - image: circleci/node:7.10
@@ -60,5 +56,23 @@ jobs:
       - run: 
           name: invalidation
           command: aws cloudfront create-invalidation --cli-input-json "{\"DistributionId\":\"$CLOUD_FRONT_INSTANCE\",\"InvalidationBatch\":{\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]},\"CallerReference\":\"$(date +%s)\"}}"
-    branches:
-      only: master
+workflows:
+  version: 2
+  build-deploy-production:
+    jobs:
+      - build
+      - deploy-production:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+  build-deploy-preview:
+    jobs:
+      - build
+      - deploy-preview:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: master
