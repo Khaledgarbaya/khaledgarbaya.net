@@ -1,0 +1,42 @@
+.notFound {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.notFound span {
+  font-family: $font_family_heading;
+	font-weight: 900;
+  font-size: 15em;
+}
+.notFound__four-left {
+}
+
+.notFound__four-right {
+}
+.notFound__animation {
+  grid-row: 2;
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notFound__text {
+  grid-row:1;
+  grid-column: 1/-1;
+}
+
+.notFound__img {
+  -webkit-animation: rotation 2s infinite linear;
+  transform-origin: 50% 55%; /*magic numbers*/
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
