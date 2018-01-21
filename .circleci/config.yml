@@ -5,24 +5,18 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1-dependencies-
 
-      - run: npm install
+      - run: 
+          name: Install dependencies
+          command: npm install
 
       - save_cache:
           paths:
@@ -31,17 +25,50 @@ jobs:
         
       # build and deploy
       - run:
-        name: test
-        command: echo "no tests"
+          name: test
+          command: echo "no tests"
 
       - run:
-        name: build
-        command: npm run build
-      
+          name: build
+          command: npm run build    
+  deploy-production:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
+
+    steps:
       - run: 
-        name: deploy
-        command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600"
-      
+          name: deploy
+          command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600"
+
+  deploy-preview:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
+    steps:
       - run: 
-        name: invalidation
-        command: aws cloudfront create-invalidation --cli-input-json "{\"DistributionId\":\"$CLOUD_FRONT_INSTANCE\",\"InvalidationBatch\":{\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]},\"CallerReference\":\"$(date +%s)\"}}"
+          name: deploy
+          command: aws s3 sync public s3://preview.khaledgarbaya.net --delete --cache-control "max-age=3153600"
+
+  invalidate-cache:
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - run: 
+          name: invalidation
+          command: aws cloudfront create-invalidation --cli-input-json "{\"DistributionId\":\"$CLOUD_FRONT_INSTANCE\",\"InvalidationBatch\":{\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]},\"CallerReference\":\"$(date +%s)\"}}"
+workflows:
+  version: 2
+  build_and_deploy_production:
+    jobs:
+      - build
+      - deploy-production
+      - invalidate-cache
+    branches:
+      only: master
+  build_and_deploy_preview:
+    jobs:
+      - build
+      - deploy-preview
+    branches:
+      ignore: master
