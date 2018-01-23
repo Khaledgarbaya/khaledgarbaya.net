@@ -15,19 +15,19 @@ const TemplateWrapper = ({ children }) => (
         {
           rel: 'apple-touch-icon',
           type: 'image/png',
-          ref: '/favicons/apple-touch-icon.png'
+          href: '/favicons/apple-touch-icon.png'
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '32x32',
-          ref: '/favicons/favicon-32x32.png'
+          href: '/favicons/favicon-32x32.png'
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '16x16',
-          ref: '/favicons/favicon-16x16.png'
+          href: '/favicons/favicon-16x16.png'
         }
       ]}
       meta={[
