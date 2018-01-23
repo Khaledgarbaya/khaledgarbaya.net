@@ -1,0 +1,16 @@
+.about {
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+}
+
+.about__image {
+  grid-column: 8/-1;
+}
+
+.about__content {
+  grid-row: 1;
+  grid-column: 1/7;
+  margin-top: 50px;
+}
+
+

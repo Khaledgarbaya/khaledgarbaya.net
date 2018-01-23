@@ -7,6 +7,7 @@
 @import "components/footer";
 @import "components/linksfooter";
 @import "components/fourOfour";
+@import "components/about";
 
 @media (min-width: 950px) {
 	.grid {
@@ -16,8 +17,9 @@
 		grid-gap: 2em 2em;
 	}
 	.main-content {
-		grid-column: 2/12;
+		grid-column: 3/11;
 		grid-row: 2;
+    padding: 10px;
 	}
 }
 @media (min-width: 1024px) {
@@ -27,4 +29,7 @@
 	.main-nav__list {
 		display: flex;
 	}
+}
+p {
+  margin: 10px 0;
 }

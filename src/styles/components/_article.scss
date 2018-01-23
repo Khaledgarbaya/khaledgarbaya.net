@@ -4,7 +4,7 @@
   grid-template-columns: repeat(10,1fr);
   grid-gap: 2em 2em;
   grid-row:2;
-  grid-column: 2/12;
+  grid-column: 3/12;
 }
 .article__meta {
   grid-row: 1;
@@ -32,7 +32,7 @@
 
 .articles-list {
     list-style: none;
-    grid-column: 2 / 10;
+    grid-column: 3 / 10;
     grid-row: 2 / auto;
     padding: 0px 1em;
 }
