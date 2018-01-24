@@ -8,7 +8,7 @@ const AboutPage = ({data}) => (
       src={
         data.allContentfulLandingPage.edges[0].node.image.responsiveResolution.src
       }
-      alt=""
+      alt='Image of Khaled Garbaya'
     />
     <div
       className="about__content"
