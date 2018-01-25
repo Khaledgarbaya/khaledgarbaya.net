@@ -49,4 +49,5 @@ jobs:
           command: aws configure set preview.create-invalidation true 
       - run: 
           name: cloudfron Invalidation
-          command: aws cloudfront create-invalidation --distribution-id $CLOUD_FRONT_INSTANCE --paths /*
+          command: aws cloudfront create-invalidation --cli-input-json "{\"DistributionId\":\"$CLOUD_FRONT_INSTANCE\",\"InvalidationBatch\":{\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]},\"CallerReference\":\"$(date +%s)\"}}"
+
