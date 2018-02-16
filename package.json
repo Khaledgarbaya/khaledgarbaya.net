@@ -20,6 +20,7 @@
     "gatsby-transformer-remark": "^1.7.28",
     "react-helmet": "^5.2.0",
     "react-mailchimp-subscribe": "^1.0.3",
+    "gatsby-plugin-sitemap": "1.2.13",
     "react-twitter-widgets": "^1.7.1"
   },
   "keywords": [
