@@ -54,6 +54,7 @@ module.exports = {
         anonymize: true,
       },
     },
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-feed',
       options: {
