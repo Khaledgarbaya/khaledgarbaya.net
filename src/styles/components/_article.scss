@@ -5,6 +5,13 @@
   grid-gap: 2em 2em;
   grid-row:2;
   grid-column: 3/12;
+  font-size: calc(16px + .2vw);
+  font-weight: normal;
+  min-height: 50vh;
+  @media (max-width: 1024px){
+    padding: 0 1em;
+    margin-top: auto;
+  }
 }
 .article__meta {
   grid-row: 1;

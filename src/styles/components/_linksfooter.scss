@@ -4,10 +4,15 @@
   display: grid;
   grid-template-columns: 1fr;
   padding: 4em 0;
+  font-size: calc(16px + .2vw);
   @media (min-width: 640px) {
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   }
+  @media (max-width: 1024px){
+    padding: 0 1em;
+  }
 }
+
 .links-footer li a {
   display: block;
   width: 100%;
