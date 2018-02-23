@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 
 class ArticleTemplate extends Component {
   render() {
     const { title, content, publishDate } = this.props.data.contentfulBlog
     return (
       <div className="article">
+        <Helmet>
+          <title>Khaled Garbaya | {title}</title>
+        </Helmet>
         <div className="article__meta">
           <p>
             Published: <time>{publishDate}</time>{' '}
