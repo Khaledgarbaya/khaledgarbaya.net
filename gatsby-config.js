@@ -9,8 +9,7 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.KHALED_GARBAYA_CF_SPACE,
-        accessToken: '4d1d3c4124718bf60b185a03d3370fef2159e02ee0f53b0a51348eb1492be1d5',
-        host: 'preview.contentful.com'
+        accessToken: process.env.KHALED_GARBAYA_CF_TOKEN,
       }
     },
     {
@@ -24,6 +23,12 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-facebook-pixel',
+      options: {
+        pixelId: '278197122713724'
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
