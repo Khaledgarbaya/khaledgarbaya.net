@@ -21,7 +21,7 @@ const LinksFooter = () => (
           <a href='https://instagram.com/khaledgarbaya'>Instagram</a>
         </li>
         <li>
-          <a href='https://www.youtube.com/channel/UC_XsS8kgD9Y64ZOug4YKhpw'>Youtube</a>
+          <a href='https://www.youtube.com/c/kgarbaya'>Youtube</a>
         </li>
         <li>
           <a href='https://www.linkedin.com/in/kgarbaya/'>Linkedin</a>
