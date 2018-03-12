@@ -48,6 +48,10 @@ const TemplateWrapper = ({ children }) => (
         {
           'http-equiv': 'Pragma',
           content: 'no-cached'
+        },
+        {
+          name: 'google-site-verification',
+          content: 'zp4OdPQ61W55uBbO8wze4ZEtQDQTAcBhPT76xoNW_VA'
         }
       ]}
     />
