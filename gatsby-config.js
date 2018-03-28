@@ -24,12 +24,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-facebook-pixel',
-      options: {
-        pixelId: '278197122713724'
-      }
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         'name': 'Khaled Garbaya',
