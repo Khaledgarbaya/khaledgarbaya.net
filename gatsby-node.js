@@ -1,5 +1,6 @@
 const path = require('path')
 const { createPaginationPages } = require("gatsby-pagination")
+const fs = require('fs-extra')
 
 exports.createPages = ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators
@@ -47,4 +48,11 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       })
     )
   })
+}
+
+exports.onPostBuild = () => {
+  fs.copySync(
+    './node_modules/focus-visible/dist/focus-visible.min.js',
+    './public/focus-visible.min.js'
+  )
 }

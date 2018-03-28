@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Khaled Garbaya<khaledgarbaya@gmail.com>",
   "dependencies": {
+    "focus-visible": "^4.1.1",
+    "fs-extra": "^5.0.0",
     "gatsby": "^1.9.149",
     "gatsby-link": "^1.6.34",
     "gatsby-paginate": "^1.0.12",

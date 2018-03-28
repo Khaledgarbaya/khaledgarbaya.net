@@ -11,6 +11,12 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       title="Khaled Garbaya - doing Javascript and stuff!"
+      script={[
+        {
+          src: '/focus-visible.min.js',
+          type: 'application/Javascript'
+        }
+      ]}
       link={[
         {
           rel: 'apple-touch-icon',

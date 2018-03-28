@@ -41,3 +41,12 @@
 p {
   margin: 10px 0;
 }
+:focus {
+  outline-style: dashed;
+  outline-width: 3px;
+  outline-offset: 2px;
+  outline-color: #03b9bc;
+}
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: 0;
+}
