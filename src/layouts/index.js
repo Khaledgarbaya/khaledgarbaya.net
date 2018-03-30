@@ -14,6 +14,7 @@ const TemplateWrapper = ({ children }) => (
       script={[
         {
           src: '/focus-visible.min.js',
+          async: 'true',
           type: 'application/Javascript'
         }
       ]}
