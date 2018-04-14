@@ -36,10 +36,10 @@ jobs:
               sudo pip install awscli
       - run: 
           name: deploy to production
-          command: aws s3 sync public s3://chocolate-free.com --delete --cache-control "max-age=3153600" --exclude 'sw.js' --exclude 'index.html'
+          command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600" --exclude 'sw.js' --exclude 'index.html'
       - run: 
           name: deploy to sw.js and inde.html production
-          command: aws s3 sync public s3://chocolate-free.com --delete --exclude '*' --include 'index.html' --include 'sw.js'
+          command: aws s3 sync public s3://khaledgarbaya.net --delete --exclude '*' --include 'index.html' --include 'sw.js'
       - run:
           name: Enable cloudfront feature
           command: aws configure set preview.cloudfront true
