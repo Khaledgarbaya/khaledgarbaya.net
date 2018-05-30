@@ -32,7 +32,7 @@ jobs:
               sudo pip install awscli
       - run:
           name: Install subfont
-          command: pip install fonttools brotli zopfli
+          command: sudo pip install fonttools brotli zopfli
 
       - run:
           name: build
