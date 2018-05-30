@@ -46,13 +46,7 @@ module.exports = {
         'display': 'standalone'
       }
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        navigateFallback: null,
-        navigateFallbackWhitelist: []
-      }
-    },
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

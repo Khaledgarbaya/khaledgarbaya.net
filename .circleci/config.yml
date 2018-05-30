@@ -26,26 +26,34 @@ jobs:
           command: echo "no tests"
 
       - run:
-          name: build
-          command: npm run build    
-
-      - run:
           name: Install awscli
           command: |
               sudo apt-get install python-pip python-dev
               sudo pip install awscli
+      - run:
+          name: Install subfont
+          command: pip install fonttools brotli zopfli
+
+      - run:
+          name: build
+          command: npm run build    
+
       - run: 
           name: deploy to production
           command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600" --exclude 'sw.js' --exclude 'index.html'
+
       - run: 
           name: deploy to sw.js and inde.html production
           command: aws s3 sync public s3://khaledgarbaya.net --delete --exclude '*' --include 'index.html' --include 'sw.js'
+
       - run:
           name: Enable cloudfront feature
           command: aws configure set preview.cloudfront true
+
       - run:
           name: Enable cloudfront feature
           command: aws configure set preview.create-invalidation true 
+
       - run: 
           name: cloudfron Invalidation
           # preventing the aws cli from logging your distribution id after invalidation is done
