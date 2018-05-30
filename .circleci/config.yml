@@ -33,29 +33,25 @@ jobs:
       - run:
           name: Install subfont
           command: sudo pip install fonttools brotli zopfli
-
       - run:
-          name: build
+          name: Build
           command: npm run build    
-
+      - run:
+          name: |
+            Prod Deploy
+          command: |
+            aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "cache-control: public, max-age=0, must-revalidate" --exclude 'sw.js' --exclude 'index.html'
       - run: 
-          name: deploy to production
-          command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "cache-control: public, max-age=0, must-revalidate" --exclude 'sw.js' --exclude 'index.html'
-
-      - run: 
-          name: deploy to sw.js and inde.html production
+          name: Deploy to sw.js and inde.html production
           command: aws s3 sync public s3://khaledgarbaya.net --delete --exclude '*' --include 'index.html' --include 'sw.js'
-
       - run:
           name: Enable cloudfront feature
           command: aws configure set preview.cloudfront true
-
       - run:
           name: Enable cloudfront feature
           command: aws configure set preview.create-invalidation true 
-
       - run: 
-          name: cloudfron Invalidation
+          name: Cloudfront invalidation
           # preventing the aws cli from logging your distribution id after invalidation is done
           command: aws cloudfront create-invalidation --cli-input-json "{\"DistributionId\":\"$CLOUD_FRONT_INSTANCE\",\"InvalidationBatch\":{\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]},\"CallerReference\":\"$(date +%s)\"}}" &> /dev/null
 
