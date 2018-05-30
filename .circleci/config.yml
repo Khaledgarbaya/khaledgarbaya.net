@@ -40,7 +40,7 @@ jobs:
 
       - run: 
           name: deploy to production
-          command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "max-age=3153600" --exclude 'sw.js' --exclude 'index.html'
+          command: aws s3 sync public s3://khaledgarbaya.net --delete --cache-control "cache-control: public, max-age=0, must-revalidate" --exclude 'sw.js' --exclude 'index.html'
 
       - run: 
           name: deploy to sw.js and inde.html production
