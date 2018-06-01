@@ -38,15 +38,15 @@ const Header = () => (
         </li>
 
         <li className="main-nav__item ">
-          <a href="/speaking/">Speaking</a>
+          <a href="/courses">
+            Courses
+          </a>
         </li>
 
         <li className="main-nav__item ">
-          <a href="/contact/">Say Hi!</a>
-        </li>
-
-        <li className="main-nav__item ">
-          <a href="/setup/">Setup</a>
+          <a href="/contact">
+            Say Hi!
+          </a>
         </li>
       </ul>
     </nav>
