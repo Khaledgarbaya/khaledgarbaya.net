@@ -1,7 +1,7 @@
 .footer {
   grid-column: 1/-1;
   text-align: center;
-  border-top: 1px solid #03B9BC;
+  border-top: 1px solid $khaled_green;
   padding: 4em 0;
   font-size: calc(16px + .2vw);
   @media (max-width: 1024px){
@@ -43,6 +43,6 @@ form button {
   padding: 5px;
   color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  background: #03B9BC;
+  background: $khaled_green;
 }
 

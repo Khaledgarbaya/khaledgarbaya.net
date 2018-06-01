@@ -46,7 +46,7 @@ p {
   outline-style: dashed;
   outline-width: 3px;
   outline-offset: 2px;
-  outline-color: #03b9bc;
+  outline-color: $khaled_green;
 }
 .js-focus-visible :focus:not(.focus-visible) {
   outline: 0;
