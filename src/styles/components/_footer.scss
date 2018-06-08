@@ -13,7 +13,7 @@
   color: #888;
 }
 
-form input[type="email"] {
+form input[type="email"], form input[type="text"], form textarea{
   border: 1px solid #777;
   border-radius: 5px;
   font-size: 1em;
@@ -22,6 +22,10 @@ form input[type="email"] {
   width: 60%;
   margin: .75em 0 1.5em;
   transition: all .2s ease-out;
+}
+
+form label, form label>input, form label>textarea {
+  display: block;
 }
 
 form button {
