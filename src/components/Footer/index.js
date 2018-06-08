@@ -18,14 +18,7 @@ const Footer = () => (
       >
         Gatsbyjs
       </a>{' '}
-      and hosted on{' '}
-      <a
-        rel="noopener noreferrer"
-        href="https://aws.amazon.com"
-        target="_blank"
-      >
-        AWS
-      </a>. The source code is hosted on{' '}
+      . The source code is hosted on{' '}
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -43,6 +36,10 @@ const Footer = () => (
         alt="Powered by Contentful"
       />
     </a>
+    {'  '}
+    <a href="https://www.netlify.com">
+        <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/>
+      </a>
   </footer>
 )
 
