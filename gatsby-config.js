@@ -106,6 +106,28 @@ module.exports = {
           `,
             output: "/rss.xml",
           },
+          {
+            resolve: `gatsby-plugin-netlify`,
+            options: {
+              headers: {
+                "/*": [
+                  "Strict-Transport-Security: max-age=31536000; includeSubdomains; preload",
+                  "Content-Security-Policy: default-src 'none'; font-src 'self' data:; img-src *.netlify.com 'self' data: *.doubleclick.net *.ctfassets.net *.contentful.com *.facebook.com *.google-analytics.com; script-src 'self' 'unsafe-inline' *.facebook.net *.google-analytics.com *.twitter.com; style-src 'self' 'unsafe-inline'; manifest-src 'self'; connect-src 'self' *.netlify.com *.doubleclick.net *.ctfassets.net *.contentful.com *.facebook.com *.google-analytics.com *.twitter.com; frame-src 'self' *.twitter.com *.youtube.com *.google.com; object-src 'none'",
+                  "X-Content-Type-Options: nosniff",
+                  "X-Frame-Options: DENY",
+                  "X-XSS-Protection: 1; mode=block",
+                  "Referrer-Policy: same-origin"
+                ]
+              }, // option to add more headers. `Link` headers are transformed by the below criteria
+              allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+              mergeSecurityHeaders: true, // boolean to turn off the default security headers
+              mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
+              mergeCachingHeaders: true, // boolean to turn off the default caching headers
+              transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+              generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+            },
+
+          }
         ],
       },
     }
