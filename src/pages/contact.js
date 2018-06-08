@@ -5,7 +5,7 @@ const ContactPage = () => (
     <h1>Contact</h1>
     <p>Wanna say hi? or have a question</p>
     <p>Hit me up on twitter <a href='https://twitter.com/khaled_garbaya'>@khaled_garbaya</a> or send me a message through the form bellow.</p>
-    <form name='contact' className='contact__form' method='post' data-netlify='true' netlify-honeypot="bot-field">
+    <form name='contact' className='contact__form' method='post' data-netlify-honeypot={'bot-field'} data-netlify='true'>
 
       <input type="hidden" name="form-name" value="contact" />
       <label aria-hidden >Don’t fill this out if you're human: <input name="bot-field" /></label>
