@@ -8,6 +8,7 @@ const ContactPage = () => (
     <form name='contact' className='contact__form' method='post' data-netlify='true' netlify-honeypot="bot-field">
 
       <input type="hidden" name="form-name" value="contact" />
+      <label aria-hidden >Don’t fill this out if you're human: <input name="bot-field" /></label>
       <label for='name'>
         Name
         <input id='name' name='name' type='text' />

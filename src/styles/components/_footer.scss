@@ -27,7 +27,9 @@ form input[type="email"], form input[type="text"], form textarea{
 form label, form label>input, form label>textarea {
   display: block;
 }
-
+label[aria-hidden="true"] {
+  display: none;
+}
 form button {
   display: inline-block;
   position: relative;
