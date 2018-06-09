@@ -107,13 +107,19 @@
 .person {
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  @media (min-width: 767px){
+    flex-direction: row;
+  }
   position: relative;
 }
 .person__avatar {
   position: relative;
   flex-basis: 175px;
   margin-right: 50px;
+  @media (max-width: 767px){
+    margin-right: 0;
+  }
 }
 
 .person__avatar img {
@@ -127,6 +133,10 @@
   margin-bottom: 5px;
   font-size: 1.5em;
   font-weight: bold;
+  @media (max-width: 767px){
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .person__description {
