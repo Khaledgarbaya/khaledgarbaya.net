@@ -4,11 +4,11 @@ import Helmet from 'react-helmet'
 
 class ArticleTemplate extends Component {
   render() {
-    const { title, content, publishDate } = this.props.data.contentfulBlog
+    const { title, content, publishDate, author } = this.props.data.contentfulBlog
     return (
       <div className="article">
         <Helmet>
-          <title>Khaled Garbaya | {title}</title>
+          <title>{title} | Khaled Garbaya </title>
         </Helmet>
         <div className="article__meta">
           <p>
@@ -20,8 +20,22 @@ class ArticleTemplate extends Component {
         </div>
         <section
           dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }}
-          className="article__content"
+          className='article__content'
         />
+        <div className='article__author'>
+          <div className='person'>
+            <div className='person__avatar'>
+              <img src={author.avatar.file.url} alt={author.avatar.title} />
+            </div>
+            <div className='person__text'>
+              <div className='person__name'>{author.fullName}</div>
+              <div 
+                className='person__description' 
+                dangerouslySetInnerHTML={{__html: author.bio.childMarkdownRemark.html}}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -43,6 +57,21 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
         }
+      }
+      author {
+        fullName
+        bio {
+          childMarkdownRemark {
+            html
+          }
+        }
+        avatar {
+          title
+          file {
+            url
+          }
+        }
+
       }
     }
   }
