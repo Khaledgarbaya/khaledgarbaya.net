@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import SEO from '../components/SEO';
 
 class ArticleTemplate extends Component {
   render() {
-    const { title, content, publishDate, author } = this.props.data.contentfulBlog
+    const { title, slug, content, featureImage, publishDate, author } = this.props.data.contentfulBlog
     return (
       <div className="article">
-        <Helmet>
-          <title>{title} | Khaled Garbaya </title>
-        </Helmet>
+      <SEO
+        key={`seo-${slug}`}
+        postImage={featureImage ? `https:${featureImage.file.url}` : null}
+        postData={
+          {
+            frontmatter:{
+              slug,
+              publishDate,
+              title,
+              description: content.childMarkdownRemark.excerpt
+            }
+          }
+        }
+        isBlogPost
+      />
+
         <div className="article__meta">
           <p>
             Published: <time>{publishDate}</time>{' '}
@@ -56,6 +70,12 @@ export const pageQuery = graphql`
       content {
         childMarkdownRemark {
           html
+          excerpt
+        }
+      }
+      featureImage {
+        file {
+          url
         }
       }
       author {
