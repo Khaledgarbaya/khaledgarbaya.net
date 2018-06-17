@@ -19,8 +19,8 @@ exports.handler = (event, context, callback) => {
     //}
 
     //var data = {
-      //from: 'CSP Report Bot <csp@stefanjudis.com>',
-      //to: 'ste@gmail.com',
+      //from: 'CSP Report Bot <csp@khaledgarbaya.net.com>',
+      //to: 'kgarbaya@gmail.com',
       //subject: `Blocked resource (${blockedUri}) on ${report['document-uri']}`,
       //text: JSON.stringify(report, null, 2)
     //}
