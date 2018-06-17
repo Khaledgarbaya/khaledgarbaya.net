@@ -23,7 +23,16 @@ class ArticleTemplate extends Component {
         }
         isBlogPost
       />
-
+      <Helmet>
+        <script type="text/javascript"
+          src="https://downloads.mailchimp.com/js/signup-forms/popup/embed.js"
+          data-dojo-config="usePlainJson: true, isDebug: false"
+        >
+        </script>
+        <script type="text/javascript">
+          {`require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"19b98089cf0ee082f3fef5efd","lid":"5392031228"}) })`}
+        </script>
+      </Helmet>
         <div className="article__meta">
           <p>
             Published: <time>{publishDate}</time>{' '}
