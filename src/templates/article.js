@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import SEO from '../components/SEO';
+import SubscriptionForm from '../components/SubscriptionForm'
 
 class ArticleTemplate extends Component {
   render() {
@@ -23,16 +24,6 @@ class ArticleTemplate extends Component {
         }
         isBlogPost
       />
-      <Helmet>
-        <script type="text/javascript"
-          src="https://downloads.mailchimp.com/js/signup-forms/popup/embed.js"
-          data-dojo-config="usePlainJson: true, isDebug: false"
-        >
-        </script>
-        <script type="text/javascript">
-          {`require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"19b98089cf0ee082f3fef5efd","lid":"5392031228"}) })`}
-        </script>
-      </Helmet>
         <div className="article__meta">
           <p>
             Published: <time>{publishDate}</time>{' '}
@@ -45,6 +36,11 @@ class ArticleTemplate extends Component {
           dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }}
           className='article__content'
         />
+
+        <div className='article__newsletter'>
+          <p>Enjoyed this post? Receive the next one in your inbox! <br /> No spam, just content.</p>
+          <SubscriptionForm />
+        </div>
         <div className='article__author'>
           <div className='person'>
             <div className='person__avatar'>

@@ -98,8 +98,14 @@
 .nextPost {
   float: right;
 }
-.article__author {
+.article__newsletter {
   grid-row: 4;
+  grid-column: 1/10;
+  border-top: 1px solid #dbe3e7;
+  padding: 30px 0;
+}
+.article__author {
+  grid-row: 5;
   grid-column: 1/10;
   border-top: 1px solid #dbe3e7;
   padding: 30px 0;

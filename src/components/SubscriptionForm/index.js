@@ -4,7 +4,7 @@ import SubscribeFrom from 'react-mailchimp-subscribe'
 const formProps = {
   action: 'https://statilix.us16.list-manage.com/subscribe/post?u=19b98089cf0ee082f3fef5efd&amp;id=5392031228',
   messages: {
-    inputPlaceholder: 'Your email',
+    inputPlaceholder: 'you@email.com',
     btnLabel: 'Subscribe!',
     sending: 'Sending...',
     success: 'Thanks for subscribing!',
