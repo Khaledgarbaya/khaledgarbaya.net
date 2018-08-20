@@ -78,7 +78,7 @@ module.exports = {
                   description: edge.node.content.childMarkdownRemark.excerpt,
                   url: site.siteMetadata.siteUrl + '/articles/' + edge.node.slug,
                   guid: site.siteMetadata.siteUrl + '/articles/' + edge.node.slug,
-                  custom_elements: [{ "content:encoded": edge.node.content.childMarkdownRemark.html }],
+                  custom_elements: [{ "content:encoded": edge.node.content.childMarkdownRemark.html }, {"dc:creator": "Khaled Garbaya"}],
                 });
               });
             },
