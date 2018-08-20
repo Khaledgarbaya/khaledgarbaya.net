@@ -112,16 +112,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        headers: {
-          "/*": [
-            "Strict-Transport-Security: max-age=31536000; includeSubdomains; preload",
-            "Content-Security-Policy-Report-Only: default-src 'none'; font-src 'self' data:; img-src *.mailchimp.com *.netlify.com 'self' data: *.doubleclick.net *.ctfassets.net *.contentful.com *.facebook.com *.google-analytics.com; script-src 'self' 'unsafe-inline' *.mailchimp.com *.facebook.net *.google-analytics.com *.twitter.com; style-src 'self' 'unsafe-inline' *.mailchimp.com; manifest-src 'self'; connect-src 'self' *.mailchimp.com *.netlify.com *.doubleclick.net *.ctfassets.net *.contentful.com *.facebook.com *.google-analytics.com *.twitter.com; frame-src 'self' *.mailchimp.com *.twitter.com *.youtube.com *.google.com; object-src 'none' ; report-uri /.netlify/functions/report/",
-            "X-Content-Type-Options: nosniff",
-            "X-Frame-Options: DENY",
-            "X-XSS-Protection: 1; mode=block",
-            "Referrer-Policy: same-origin"
-          ]
-        }, // option to add more headers. `Link` headers are transformed by the below criteria
+        headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
         allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
         mergeSecurityHeaders: true, // boolean to turn off the default security headers
         mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
