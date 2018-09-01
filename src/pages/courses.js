@@ -1,16 +1,20 @@
 import React from 'react'
+import {graphql} from 'gatsby'
+import Layout from '../components/Layout'
 
 const CoursesPage = ({data}) => (
-  <div className="courses main-content">
-    <div
-      className="courses__content"
-      dangerouslySetInnerHTML={{
-        __html:
+  <Layout>
+    <div className="courses main-content">
+      <div
+        className="courses__content"
+        dangerouslySetInnerHTML={{
+          __html:
           data.allContentfulLandingPage.edges[0].node.content
-            .childMarkdownRemark.html,
-      }}
-    />
-  </div>
+          .childMarkdownRemark.html,
+        }}
+      />
+    </div>
+  </Layout>
 )
 
 export default CoursesPage

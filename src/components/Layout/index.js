@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import LinksFooter from '../components/LinksFooter'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import LinksFooter from '../../components/LinksFooter'
 
-import '../styles/main.scss'
+import '../../styles/main.scss'
 
-const TemplateWrapper = ({ children }) => (
+const Layout = ({ children }) => (
   <div>
     <Helmet
       title="Khaled Garbaya - doing Javascript and stuff!"
@@ -64,15 +64,15 @@ const TemplateWrapper = ({ children }) => (
     />
     <div className="grid">
       <Header />
-      {children()}
+      {children}
       <LinksFooter />
       <Footer />
     </div>
   </div>
 )
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+Layout.propTypes = {
+  children: PropTypes.object,
 }
 
-export default TemplateWrapper
+export default Layout
