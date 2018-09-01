@@ -1,6 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
+import Layout from '../Layout'
 
 const Article = ({ data }) => {
   return (
@@ -34,15 +35,17 @@ const IndexPage = ({ data, pathContext }) => {
     return null
   }
   return (
-    <div className="articles-list">
-      <ul>{nodes.map((node, i) => <Article key={i} data={node} />)}</ul>
-      <div className="previousPost pagination">
-        <PaginationLink to={prev} text="Go to Previous Page" />
+    <Layout>
+      <div className="articles-list">
+        <ul>{nodes.map((node, i) => <Article key={i} data={node} />)}</ul>
+        <div className="previousPost pagination">
+          <PaginationLink to={prev} text="Go to Previous Page" />
+        </div>
+        <div className="nextPost pagination">
+          <PaginationLink to={next} text="Go to Next Page" />
+        </div>
       </div>
-      <div className="nextPost pagination">
-        <PaginationLink to={next} text="Go to Next Page" />
-      </div>
-    </div>
+    </Layout>
   )
 }
 
