@@ -46,15 +46,7 @@ const Layout = ({ children }) => (
         {
           name: 'keywords',
           content:
-            'Khaled Garbaya, javascript, front-end, web developer, HTML5, CSS3, Berlin, Germany',
-        },
-        {
-          'http-equiv': 'Cache-control',
-          content: 'no-cache, no-store, must-revalidate'
-        },
-        {
-          'http-equiv': 'Pragma',
-          content: 'no-cached'
+            'Khaled Garbaya, javascript, front-end, web developer, HTML5, CSS3',
         },
         {
           name: 'google-site-verification',

@@ -96,6 +96,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
   return (
     <Helmet>
       {/* General tags */}
+      <title>{title} | Khaled Garbaya</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
 
