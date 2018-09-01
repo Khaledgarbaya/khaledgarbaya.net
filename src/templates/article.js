@@ -3,39 +3,42 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import SEO from '../components/SEO';
 import SubscriptionForm from '../components/SubscriptionForm'
+import Layout from '../components/Layout'
+import {graphql} from 'gatsby'
 
 class ArticleTemplate extends Component {
   render() {
     const { title, slug, content, featureImage, publishDate, author } = this.props.data.contentfulBlog
     return (
-      <div className="article">
-      <SEO
-        key={`seo-${slug}`}
-        postImage={featureImage ? `https:${featureImage.file.url}` : null}
-        postData={
-          {
-            frontmatter:{
-              slug,
-              publishDate,
-              title,
-              description: content.childMarkdownRemark.excerpt
+      <Layout>
+        <div className="article">
+          <SEO
+            key={`seo-${slug}`}
+            postImage={featureImage ? `https:${featureImage.file.url}` : null}
+            postData={
+              {
+                frontmatter:{
+                  slug,
+                  publishDate,
+                  title,
+                  description: content.childMarkdownRemark.excerpt
+                }
+              }
             }
-          }
-        }
-        isBlogPost
-      />
-        <div className="article__meta">
-          <p>
-            Published: <time>{publishDate}</time>{' '}
-          </p>
-        </div>
-        <div className="article__header">
-          <h2 className="h1">{title}</h2>
-        </div>
-        <section
-          dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }}
-          className='article__content'
-        />
+            isBlogPost
+          />
+          <div className="article__meta">
+            <p>
+              Published: <time>{publishDate}</time>{' '}
+            </p>
+          </div>
+          <div className="article__header">
+            <h2 className="h1">{title}</h2>
+          </div>
+          <section
+            dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }}
+            className='article__content'
+          />
 
         <div className='article__newsletter'>
           <p>Enjoyed this post? Receive the next one in your inbox! <br /> No spam, just content.</p>
@@ -56,6 +59,7 @@ class ArticleTemplate extends Component {
           </div>
         </div>
       </div>
+    </Layout>
     )
   }
 }
