@@ -114,7 +114,6 @@ module.exports = {
         navigateFallback: null,
         navigateFallbackWhitelist: [],
       }
-    },
-    `gatsby-plugin-netlify`
+    }
   ],
 }
