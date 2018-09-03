@@ -108,7 +108,13 @@ module.exports = {
         'display': 'standalone'
       }
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        navigateFallback: null,
+        navigateFallbackWhitelist: [],
+      }
+    },
     `gatsby-plugin-netlify`
   ],
 }
