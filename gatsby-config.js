@@ -117,7 +117,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        "navigateFallback": null,
+        "navigateFallback": '',
         "navigateFallbackWhitelist": []
       }
     }
