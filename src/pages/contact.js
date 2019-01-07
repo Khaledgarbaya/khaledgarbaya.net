@@ -7,7 +7,7 @@ const ContactPage = () => (
     <div className='contact main-content'>
       <h1>Contact</h1>
       <p>Wanna say hi? or have a question</p>
-      <p>Hit me up on twitter <a href='https://twitter.com/khaled_garbaya'>@khaled_garbaya</a> 
+      <p>Hit me up on twitter <a href='https://twitter.com/khaled_garbaya'>@khaled_garbaya</a></p>
     </div>
   </Layout>)
 
