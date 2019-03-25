@@ -26,6 +26,12 @@ const LinksFooter = () => (
         <li>
           <a href='https://www.linkedin.com/in/kgarbaya/'>Linkedin</a>
         </li>
+        <li>
+         <a href="https://dev.to/khaled_garbaya">
+           <i class="fab fa-dev" title="khaled_garbaya's DEV Profile"></i>
+           DEV Profile
+         </a>
+        </li>
       </ul>
       <Follow username='khaled_garbaya' />
     </div>
