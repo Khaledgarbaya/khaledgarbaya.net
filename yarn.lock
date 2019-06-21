@@ -5555,12 +5555,12 @@ gatsby-pagination@^1.1.0:
   resolved "https://registry.yarnpkg.com/gatsby-pagination/-/gatsby-pagination-1.2.0.tgz#847ebb694613969665c1f6f686ee4025ba392cc2"
   integrity sha512-1C9Ul4vwUbmzlv202Ictj0pEL0ff7xa8fb/1UY6LiSdVMwh013QXqZm4YyVSMQKFl1zoNAlN3zWca5FMTK2bYg==
 
-gatsby-plugin-canonical-urls@^1.0.16:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-1.0.18.tgz#01162f0638468bac4cc60976c46a99d41bbe90ba"
-  integrity sha1-ARYvBjhGi6xMxgl2xGqZ1Bu+kLo=
+gatsby-plugin-canonical-urls@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.0.tgz#76e985bcc70294f3080670faa75855a0ff56cabb"
+  integrity sha512-4tPrlhKg8yOBtEsohir0FhVk3lB6ldxORjS5XuFrtIlT0EO7AWEFH71vzMkGHmk34tgzReO+VbusHrsEVwuIBQ==
   dependencies:
-    babel-runtime "^6.26.0"
+    "@babel/runtime" "^7.0.0"
 
 gatsby-plugin-facebook-pixel@^1.0.3:
   version "1.0.3"
