@@ -29,13 +29,6 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: "UA-28940918-1",
-        anonymize: true,
-      },
-    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-feed',
