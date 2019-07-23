@@ -5642,10 +5642,10 @@ gatsby-plugin-feed@^2.0.0:
     lodash.merge "^4.6.0"
     rss "^1.2.2"
 
-gatsby-plugin-google-analytics@^2.0.0:
-  version "2.0.19"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.19.tgz#02430313336aa65712bad75600e45a7b510bbd40"
-  integrity sha512-Db1nOpzS1Nq52E0tFfgF2uCPCnWEtJbUMKLX1RU5Hfki8BoPHpZUHrcd5NtT3KQuVa7Ekps+3uJVziK+Yj5n+A==
+gatsby-plugin-google-analytics@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.4.tgz#f0b64900e125cef03e930332c45063ece8263206"
+  integrity sha512-TyCazAUVMfMy6U/dHtXYLg9FTS7PtOBrRZkpp0Pdqe2M9qA10xG54JZpjJcLGUkZr5oeZPjNAvoiVyatrTcWiw==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
@@ -5658,7 +5658,7 @@ gatsby-plugin-manifest@^2.0.0:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby-plugin-netlify@^2.1.3:
+gatsby-plugin-netlify@^2.0.0:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.1.3.tgz#61bd13e97175e4b438094a03c0848118f794deab"
   integrity sha512-tc43xvKuXosvDxcD6TpVCO2UX0XywKlmC46kVl3aAuKAf1lygqLEUSahKcJ/oorbx6SD0CCY135mkHLj6YsYaw==
