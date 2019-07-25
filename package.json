@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "eslint": "^4.14.0",
-    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-config-standard": "11.0.0",
     "eslint-config-standard-preact": "^1.1.6",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.8.0",

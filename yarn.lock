@@ -4393,10 +4393,10 @@ eslint-config-standard-preact@^1.1.6:
     eslint-config-standard-jsx "^4.0.2"
     eslint-plugin-react "^7.1.0"
 
-eslint-config-standard@11.0.0-beta.0:
-  version "11.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-11.0.0-beta.0.tgz#f8afe69803d95c685a4b8392b8793188eb03cbb3"
-  integrity sha512-f+vs5HAHQo7NRZ3hVe+UVdT5DbebMNaFTWFp95orJ0LUdYPoWdM8xw/bMeO/IZMvHOPmIteGKGc2QOhSXd5nRg==
+eslint-config-standard@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-11.0.0.tgz#87ee0d3c9d95382dc761958cbb23da9eea31e0ba"
+  integrity sha512-oDdENzpViEe5fwuRCWla7AXQd++/oyIp8zP+iP9jiUPG6NBj3SHgdgtl/kTn00AjeN+1HNvavTKmYbMo+xMOlw==
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
