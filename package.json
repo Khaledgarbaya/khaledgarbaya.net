@@ -20,7 +20,7 @@
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sitemap": "next",
     "gatsby-remark-autolink-headers": "^2.0.0",
-    "gatsby-remark-prismjs": "^3.2.10",
+    "gatsby-remark-prismjs": "^3.3.5",
     "gatsby-source-contentful": "^2.1.14",
     "gatsby-transformer-remark": "^2.0.0",
     "global": "^4.3.2",
