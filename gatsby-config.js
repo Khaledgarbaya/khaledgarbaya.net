@@ -50,6 +50,7 @@ module.exports = {
             serialize: ({ query: { site, allContentfulBlog } }) => {
               return allContentfulBlog.edges.map(edge => {
                 return Object.assign({}, edge.node, {
+                  title: edge.node.title,
                   description: edge.node.content.childMarkdownRemark.excerpt,
                   url: site.siteMetadata.siteUrl + '/articles/' + edge.node.slug,
                   guid: site.siteMetadata.siteUrl + '/articles/' + edge.node.slug,
@@ -80,6 +81,7 @@ module.exports = {
             }
           `,
             output: "/rss.xml",
+            title: 'Khaled Garbaya\'s blog feed'
           },
         ],
       },

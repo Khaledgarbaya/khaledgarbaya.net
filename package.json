@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Khaled Garbaya<khaledgarbaya@gmail.com>",
   "dependencies": {
-    "focus-visible": "^4.1.1",
+    "focus-visible": "^5.0.2",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.0.0",
     "gatsby-paginate": "^1.0.12",
@@ -16,9 +16,9 @@
     "gatsby-plugin-manifest": "^2.0.0",
     "gatsby-plugin-netlify": "^2.0.0",
     "gatsby-plugin-offline": "^2.2.4",
-    "gatsby-plugin-react-helmet": "^2.0.0",
-    "gatsby-plugin-sass": "next",
-    "gatsby-plugin-sitemap": "next",
+    "gatsby-plugin-react-helmet": "^3.1.5",
+    "gatsby-plugin-sass": "^2.1.12",
+    "gatsby-plugin-sitemap": "^2.2.9",
     "gatsby-remark-autolink-headers": "^2.0.0",
     "gatsby-remark-prismjs": "^3.2.10",
     "gatsby-source-contentful": "^2.1.14",
@@ -46,15 +46,15 @@
     "develop": "gatsby develop"
   },
   "devDependencies": {
-    "eslint": "^4.14.0",
+    "eslint": "^6.2.2",
     "eslint-config-standard": "11.0.0-beta.0",
     "eslint-config-standard-preact": "^1.1.6",
-    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.5.1",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.10.1",
     "subfont": "^3.3.0"
   }
