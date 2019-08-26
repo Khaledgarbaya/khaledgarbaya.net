@@ -2,8 +2,8 @@ const path = require('path')
 const { createPaginationPages } = require("gatsby-pagination")
 const fs = require('fs-extra')
 
-exports.createPages = ({graphql, boundActionCreators}) => {
-  const {createPage} = boundActionCreators
+exports.createPages = ({graphql, actions}) => {
+  const {createPage} = actions
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve('src/templates/article.js')
     const indexPage = path.resolve('src/components/Home/index.js')

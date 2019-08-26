@@ -26,8 +26,8 @@ const Article = ({ data }) => {
     </li>
   )
 }
-const IndexPage = ({ data, pathContext }) => {
-  const { nodes, page, prev, next, pages, total, limit } = pathContext
+const IndexPage = ({ data, pageContext }) => {
+  const { nodes, page, prev, next, pages, total, limit } = pageContext
   const PaginationLink = props => {
     if (props.to && props.text) {
       return <Link to={props.to}>{props.text}</Link>
@@ -50,7 +50,7 @@ const IndexPage = ({ data, pathContext }) => {
 }
 
 IndexPage.propTypes = {
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 }
 
 export default IndexPage
