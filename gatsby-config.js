@@ -114,6 +114,15 @@ module.exports = {
       options: {
         "navigateFallbackWhitelist": []
       }
+    },
+     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-28940918-1',
+        head: false,
+        anonymize: true,
+        siteSpeedSampleRate: 10
+      }
     }
   ],
 }
