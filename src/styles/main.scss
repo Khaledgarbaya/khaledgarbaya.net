@@ -12,11 +12,16 @@
 @import "components/courses";
 
 @media (min-width: 950px) {
+  .article {
+    display: grid;
+  }
 	.grid {
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		grid-gap: 2em 2em;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: 2em 2em;
+    margin: 0 auto;
 	}
 	.main-content {
 		grid-column: 3/11;

@@ -36,6 +36,7 @@ const IndexPage = ({ data, pageContext }) => {
   }
   return (
     <Layout>
+        <iframe className='article__embed' width='160' height='400' src='https://leanpub.com/gatsbyandcontentfulguide/embed' frameborder='0' allowtransparency='true'></iframe>
       <div className="articles-list">
         <ul>{nodes.map((node, i) => <Article key={i} data={node} />)}</ul>
         <div className="previousPost pagination">

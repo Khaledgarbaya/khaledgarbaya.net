@@ -39,7 +39,7 @@ class ArticleTemplate extends Component {
             dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }}
             className='article__content'
           />
-
+              <iframe className='article__embed' width='160' height='400' src='https://leanpub.com/gatsbyandcontentfulguide/embed' frameborder='0' allowtransparency='true'></iframe>
         <div className='article__newsletter'>
           <p>Enjoyed this post? Receive the next one in your inbox! <br /> No spam, just content.</p>
           <SubscriptionForm />
