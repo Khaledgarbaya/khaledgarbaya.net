@@ -5,6 +5,7 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
+    headers:{"Access-Control-Allow-Origin":"*"},
     body: JSON.stringify([
       {
         id: '5deec11261a7b2250800537d',
