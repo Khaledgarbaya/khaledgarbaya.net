@@ -86,7 +86,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
     cloudName: 'kgarbaya',
     titleBottomOffset: 300,
     imagePublicID: 'k4d-dev-social-card.png',
-    titleFont: 'Alegreya',
+    titleFont: 'Alegreya_64_bold',
     textColor: '232129'
   })
   const url = postMeta.slug
