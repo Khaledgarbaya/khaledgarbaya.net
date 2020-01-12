@@ -84,6 +84,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
   const image = getShareImage({
     title: title,
     cloudName: 'kgarbaya',
+    titleBottomOffset: 300,
     imagePublicID: 'k4d-dev-social-card.png',
     titleFont: 'Alegreya',
     textColor: '232129'
