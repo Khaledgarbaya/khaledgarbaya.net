@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Layout from '../Layout'
 
@@ -15,11 +15,15 @@ const Article = ({ data }) => {
       <div
         className="post__summary"
         dangerouslySetInnerHTML={{
-          __html: data.node.content.childMarkdownRemark.excerpt,
+          __html:
+            data.node.content.childMarkdownRemark.excerpt
         }}
       />
       <small>
-        <Link className="read-more-link" to={`articles/${data.node.slug}`}>
+        <Link
+          className="read-more-link"
+          to={`articles/${data.node.slug}`}
+        >
           Read more ››
         </Link>
       </small>
@@ -27,7 +31,15 @@ const Article = ({ data }) => {
   )
 }
 const IndexPage = ({ data, pageContext }) => {
-  const { nodes, page, prev, next, pages, total, limit } = pageContext
+  const {
+    nodes,
+    page,
+    prev,
+    next,
+    pages,
+    total,
+    limit
+  } = pageContext
   const PaginationLink = props => {
     if (props.to && props.text) {
       return <Link to={props.to}>{props.text}</Link>
@@ -36,14 +48,36 @@ const IndexPage = ({ data, pageContext }) => {
   }
   return (
     <Layout>
-        <iframe className='article__embed' width='160' height='400' src='https://leanpub.com/gatsbyandcontentfulguide/embed' frameborder='0' allowtransparency='true'></iframe>
+      <SEO
+        postData={{
+          frontmatter: {}
+        }}
+      />
+      <iframe
+        className="article__embed"
+        width="160"
+        height="400"
+        src="https://leanpub.com/gatsbyandcontentfulguide/embed"
+        frameborder="0"
+        allowtransparency="true"
+      ></iframe>
       <div className="articles-list">
-        <ul>{nodes.map((node, i) => <Article key={i} data={node} />)}</ul>
+        <ul>
+          {nodes.map((node, i) => (
+            <Article key={i} data={node} />
+          ))}
+        </ul>
         <div className="previousPost pagination">
-          <PaginationLink to={prev} text="Go to Previous Page" />
+          <PaginationLink
+            to={prev}
+            text="Go to Previous Page"
+          />
         </div>
         <div className="nextPost pagination">
-          <PaginationLink to={next} text="Go to Next Page" />
+          <PaginationLink
+            to={next}
+            text="Go to Next Page"
+          />
         </div>
       </div>
     </Layout>
