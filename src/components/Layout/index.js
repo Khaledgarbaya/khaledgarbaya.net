@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import LinksFooter from '../../components/LinksFooter'
-
+import '../../styles/tailwind.css'
 import '../../styles/main.scss'
 
 const Layout = ({ children }) => (
@@ -41,12 +41,12 @@ const Layout = ({ children }) => (
         {
           name: 'description',
           content:
-            'Khaled Garbaya is a software developer and active open sorcerer. He speaks multiple languages and is often overheard saying "Bonjour" in HTML',
+            'Khaled Garbaya is a software developer and active open sorcerer. He speaks multiple languages and is often overheard saying "Bonjour" in HTML'
         },
         {
           name: 'keywords',
           content:
-            'Khaled Garbaya, javascript, front-end, web developer, HTML5, CSS3, Berlin, Germany',
+            'Khaled Garbaya, javascript, front-end, web developer, HTML5, CSS3, Berlin, Germany'
         },
         {
           'http-equiv': 'Cache-control',
@@ -58,11 +58,12 @@ const Layout = ({ children }) => (
         },
         {
           name: 'google-site-verification',
-          content: 'zp4OdPQ61W55uBbO8wze4ZEtQDQTAcBhPT76xoNW_VA'
+          content:
+            'zp4OdPQ61W55uBbO8wze4ZEtQDQTAcBhPT76xoNW_VA'
         }
       ]}
     />
-    <div className="grid">
+    <div>
       <Header />
       {children}
       <LinksFooter />
@@ -72,7 +73,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.object
 }
 
 export default Layout

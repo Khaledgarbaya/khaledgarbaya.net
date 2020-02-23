@@ -1,50 +1,51 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 
 const Header = () => (
-  <header className="main-header">
-    <h1 className="logo">
+  <header className="sm:flex items-center justify-between container mx-auto p-8">
+    <h1 className="p-2">
       <a href="/" title="khaledgarbaya.net">
-        <img width='70' height='70' src="/logo.svg" alt="logo" />
+        <img
+          className="h-16 w-16 mx-auto"
+          src="/logo.svg"
+          alt="logo"
+        />
       </a>
     </h1>
-    <button
-      className="menu-trigger"
-      aria-controls="main-nav"
-      aria-expanded="false"
-      id="js-menu-trigger"
-    >
-      Menu
-      <span
-        className="menu-trigger__icon"
-        id="js-menu-trigger__icon"
-        aria-hidden="true"
+    <nav className="">
+      <ul
+        className="flex justify-between list-none"
+        id="menu"
       >
-        +
-      </span>
-    </button>
-    <nav className="main-nav" id="main-nav">
-      <ul className="main-nav__list clearfix" id="menu">
-        <li className="main-nav__item ">
-          <a href="/">
+        <li>
+          <a className="ml-0 sm:ml-6 href text-sm" href="/">
             Articles
           </a>
         </li>
 
-        <li className="main-nav__item ">
-          <a href="/about">
+        <li>
+          <a
+            className="ml-0 sm:ml-6 href text-sm"
+            href="/about"
+          >
             About me
           </a>
         </li>
 
-        <li className="main-nav__item ">
-          <a href="/courses">
+        <li>
+          <a
+            className="ml-0 sm:ml-6 href text-sm"
+            href="/courses"
+          >
             Courses
           </a>
         </li>
 
-        <li className="main-nav__item ">
-          <a href="/contact">
+        <li>
+          <a
+            className="ml-0 sm:ml-6 href text-sm"
+            href="/contact"
+          >
             Say Hi!
           </a>
         </li>

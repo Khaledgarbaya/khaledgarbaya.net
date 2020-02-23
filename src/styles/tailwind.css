@@ -1,0 +1,36 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600,700&display=swap');
+
+.font-heading {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.font-body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  @apply font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+.href {
+  @apply text-gray-800 border-b-2 border-dashed;
+}
+
+.href:hover {
+  @apply border-teal-600;
+}
