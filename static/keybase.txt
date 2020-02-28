@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kgarbaya
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://k4d.dev
+  * I am kgarbaya (https://keybase.io/kgarbaya) on keybase.
+  * I have a public key ASBhVb-tebXlS6w4eBfLudyXbfrw3v2ZSpgOriCLSQTmxwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01206155bfad79b5e54bac387817cbb9dc976dfaf0defd994a980eae208b4904e6c70a",
+      "host": "keybase.io",
+      "kid": "01206155bfad79b5e54bac387817cbb9dc976dfaf0defd994a980eae208b4904e6c70a",
+      "uid": "0d0d0c09c4818c40fc33017acbadfc19",
+      "username": "kgarbaya"
+    },
+    "merkle_root": {
+      "ctime": 1582896069,
+      "hash": "9c545ab56ee87192080650191b79dfb43e7c22bebd4b0790da2e1cde64b304d2d030ace7b1fc9b38a9d937fc4595479f710cd8ea30f413ffc5654456dc40e6c5",
+      "hash_meta": "b8d73ae60d6d7a4a092037cf3d3a59c86f2e38a15b83e1801b087c345f1206ad",
+      "seqno": 14790454
+    },
+    "service": {
+      "entropy": "qj1FJ8cQUc7O75xetgZiiIwQ",
+      "hostname": "k4d.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.1"
+  },
+  "ctime": 1582896078,
+  "expire_in": 504576000,
+  "prev": "ff3dc0d2c7b901c856533939fcfb6a929002d609e8fe968f9df44830b050f644",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgYVW/rXm15UusOHgXy7ncl2368N79mUqYDq4gi0kE5scKp3BheWxvYWTESpcCCMQg/z3A0se5AchWUzk5/PtqkpAC1gno/paPnfRIMLBQ9kTEILNa5SJPWFxZ5gJsOrriY4ngrvKRtLVKX38cgoUr9BTZAgHCo3NpZ8RA9RyqqnjJm9tolwv0mhYZDbIINkzIFyIzUsyozrryszFuxiZdStN0HuJ6WUX/D+N9KP+WOyxsXjlXdRFytMpqC6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHEwqMH3x3JM19go1CYrYnTdQCp7vJMowve/V7MmTkPMo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kgarbaya
+
+==================================================================
