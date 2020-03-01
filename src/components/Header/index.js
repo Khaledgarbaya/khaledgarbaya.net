@@ -1,57 +1,41 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
 const Header = () => (
-  <header className="sm:flex items-center justify-between container mx-auto p-8">
+  <header className="container items-center justify-between p-8 mx-auto sm:flex">
     <h1 className="p-2">
       <a href="/" title="khaledgarbaya.net">
-        <img
-          className="h-16 w-16 mx-auto"
-          src="/logo.svg"
-          alt="logo"
-        />
+        <img className="w-16 h-16 mx-auto" src="/logo.svg" alt="logo" />
       </a>
     </h1>
     <nav className="">
-      <ul
-        className="flex justify-between list-none"
-        id="menu"
-      >
+      <ul className="flex justify-between list-none" id="menu">
         <li>
-          <a className="ml-0 sm:ml-6 href text-sm" href="/">
+          <Link className="ml-0 text-sm sm:ml-6 href" to="/">
             Articles
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
-            className="ml-0 sm:ml-6 href text-sm"
-            href="/about"
-          >
+          <Link className="ml-0 text-sm sm:ml-6 href" to="/about">
             About me
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
-            className="ml-0 sm:ml-6 href text-sm"
-            href="/courses"
-          >
+          <Link className="ml-0 text-sm sm:ml-6 href" to="/courses">
             Courses
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
-            className="ml-0 sm:ml-6 href text-sm"
-            href="/contact"
-          >
+          <Link className="ml-0 sm:ml-6 href text-sm" to="/contact">
             Say Hi!
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
   </header>
-)
+);
 
-export default Header
+export default Header;

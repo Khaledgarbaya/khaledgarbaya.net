@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import SEO from '../components/SEO'
-import SubscriptionForm from '../components/SubscriptionForm'
-import Layout from '../components/Layout'
-import { graphql } from 'gatsby'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import SEO from "../components/SEO";
+import SubscriptionForm from "../components/SubscriptionForm";
+import Layout from "../components/Layout";
+import { graphql } from "gatsby";
 
 class ArticleTemplate extends Component {
   render() {
@@ -15,72 +14,49 @@ class ArticleTemplate extends Component {
       featureImage,
       publishDate,
       author
-    } = this.props.data.contentfulBlog
+    } = this.props.data.contentfulBlog;
     return (
       <Layout>
-        <div className="p-8">
+        <div className="container max-w-5xl p-8 mx-auto">
           <SEO
             key={`seo-${slug}`}
-            postImage={
-              featureImage
-                ? `https:${featureImage.file.url}`
-                : null
-            }
+            postImage={featureImage ? `https:${featureImage.file.url}` : null}
             postData={{
               frontmatter: {
                 slug,
                 publishDate,
                 title,
-                description:
-                  content.childMarkdownRemark.excerpt
+                description: content.childMarkdownRemark.excerpt
               }
             }}
             isBlogPost
           />
 
-          <h2 className="font-heading text-3xl">{title}</h2>
-          <span className="text-sm inline-block text-gray-700 broder border-b">
-            Published: <time>{publishDate}</time>{' '}
+          <h2 className="text-3xl font-heading">{title}</h2>
+          <span className="inline-block text-sm text-gray-700 border-b broder">
+            Published: <time>{publishDate}</time>{" "}
           </span>
-          <section
-            dangerouslySetInnerHTML={{
-              __html: content.childMarkdownRemark.html
-            }}
-            className="font-body mt-10"
-          />
-
-          <iframe
-            className="article__embed"
-            width="160"
-            height="400"
-            src="https://leanpub.com/gatsbyandcontentfulguide/embed"
-            frameborder="0"
-            allowtransparency="true"
-          ></iframe>
-          <div className="article__newsletter">
-            <p>
-              Enjoyed this post? Receive the next one in
-              your inbox! <br /> No spam, just content.
-            </p>
+          <div className="container mx-auto font-body">
+            <section
+              dangerouslySetInnerHTML={{
+                __html: content.childMarkdownRemark.html
+              }}
+              className="w-full max-w-4xl sm:w-3/4"
+            />
+          </div>
+          <div className="text-sm text-gray">
             <SubscriptionForm />
           </div>
-          <div className="article__author">
-            <div className="person">
-              <div className="person__avatar">
-                <img
-                  src={author.avatar.file.url}
-                  alt={author.avatar.title}
-                />
+          <div className="container mx-auto mt-4 mt-5 text-sm text-gray-700">
+            <div className="flex flex-wrap">
+              <div className="rounded-full overflow-hidden w-24 h-24">
+                <img src={author.avatar.file.url} alt={author.avatar.title} />
               </div>
-              <div className="person__text">
-                <div className="person__name">
-                  {author.fullName}
-                </div>
+              <div className="w-2/3">
                 <div
-                  className="person__description"
+                  className="px-4"
                   dangerouslySetInnerHTML={{
-                    __html:
-                      author.bio.childMarkdownRemark.html
+                    __html: author.bio.childMarkdownRemark.html
                   }}
                 />
               </div>
@@ -88,15 +64,15 @@ class ArticleTemplate extends Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
 ArticleTemplate.propTypes = {
   data: PropTypes.object.isRequired
-}
+};
 
-export default ArticleTemplate
+export default ArticleTemplate;
 
 export const pageQuery = graphql`
   query articleQuery($slug: String!) {
@@ -131,4 +107,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
