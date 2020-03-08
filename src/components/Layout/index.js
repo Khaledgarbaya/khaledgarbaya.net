@@ -60,7 +60,7 @@ const Layout = ({ children }) => (
         }
       ]}
     />
-    <div>
+    <div className="max-w-screen-lg mx-auto container">
       <Header />
       {children}
       <Footer />
