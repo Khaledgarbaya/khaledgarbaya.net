@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
           frontmatter: {}
         }}
       />
-      <div className="container max-w-4xl mx-auto p-8">
+      <div className="max-w-screen-lg mx-auto p-8">
         <ul className="list-none">
           {nodes.map((node, i) => (
             <Article key={i} data={node} />

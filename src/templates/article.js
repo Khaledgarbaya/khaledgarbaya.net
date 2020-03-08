@@ -17,7 +17,7 @@ class ArticleTemplate extends Component {
     } = this.props.data.contentfulBlog;
     return (
       <Layout>
-        <div className="container max-w-5xl p-8 mx-auto">
+        <div className="p-8">
           <SEO
             key={`seo-${slug}`}
             postImage={featureImage ? `https:${featureImage.file.url}` : null}
@@ -36,12 +36,12 @@ class ArticleTemplate extends Component {
           <span className="inline-block text-sm text-gray-700 border-b broder">
             Published: <time>{publishDate}</time>{" "}
           </span>
-          <div className="container mx-auto font-body">
+          <div className="font-body">
             <section
               dangerouslySetInnerHTML={{
                 __html: content.childMarkdownRemark.html
               }}
-              className="w-full max-w-4xl sm:w-3/4"
+              className="w-full"
             />
           </div>
           <div className="text-sm text-gray">

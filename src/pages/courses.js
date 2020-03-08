@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const CoursesPage = ({ data }) => (
   <Layout>
-    <div className="container mx-auto p-8">
+    <div className="container max-w-screen-lg mx-auto p-8">
       <div
         className="courses__content"
         dangerouslySetInnerHTML={{
