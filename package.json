@@ -44,7 +44,6 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "postbuild": "subfont public --inline-css --inline-fonts --in-place --debug",
     "develop": "gatsby develop"
   },
   "devDependencies": {
