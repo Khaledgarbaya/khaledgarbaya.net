@@ -28,12 +28,9 @@ h6 {
 }
 
 h2 {
-  @apply my-4 text-xl;
+  @apply my-4 text-2xl;
 }
 
-h2 {
-  @apply my-4 text-lg;
-}
 a {
   @apply font-bold text-gray-800 border-b-2 border-dashed;
 }
