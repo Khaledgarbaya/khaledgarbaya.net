@@ -49,7 +49,7 @@ a:hover {
 }
 
 p {
-  @apply max-w-4xl my-4;
+  @apply max-w-4xl my-8;
 }
 /*Cobolt code theme*/
 code[class*='language-'],
