@@ -8,3 +8,7 @@ http://khaledgarbaya.net/* https://khaledgarbaya.net/:splat 301!
 
 # talks
 https://k4d.dev/talk/cra-vs-gatsby https://speakerdeck.com/kgarbaya/gatsby-as-a-replacement-for-create-react-app
+
+# subdomain
+
+https://*.khaledgarbaya.net https://khaledgarbaya.net/courses:splat 301!
