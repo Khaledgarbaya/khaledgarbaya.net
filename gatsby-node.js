@@ -1,21 +1,20 @@
-const path = require('path')
-const { createPaginationPages } = require("gatsby-pagination")
-const fs = require('fs-extra')
+const path = require("path");
+const { createPaginationPages } = require("gatsby-pagination");
+const fs = require("fs-extra");
 
-exports.createPages = ({graphql, boundActionCreators}) => {
-  const {createPage} = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve('src/templates/article.js')
-    const indexPage = path.resolve('src/components/Home/index.js')
+    const blogPostTemplate = path.resolve("src/templates/article.js");
     resolve(
       graphql(`
         {
-          allContentfulBlog (sort:{fields: [publishDate], order: DESC}) {
+          allContentfulBlog(sort: { fields: [publishDate], order: DESC }) {
             edges {
               node {
                 title
                 slug
-                publishDate(formatString:"dddd, MMM Do YYYY")
+                publishDate(formatString: "dddd, MMM Do YYYY")
                 content {
                   childMarkdownRemark {
                     excerpt
@@ -25,34 +24,28 @@ exports.createPages = ({graphql, boundActionCreators}) => {
             }
           }
         }
-      `).then((result) => {
+      `).then(result => {
         if (result.errors) {
-          reject(result.errors)
+          reject(result.errors);
         }
-        createPaginationPages({
-          createPage: createPage,
-          edges: result.data.allContentfulBlog.edges,
-          component: indexPage,
-          limit: 5
-        })
-        result.data.allContentfulBlog.edges.forEach((edge) => {
-          createPage ({
+        result.data.allContentfulBlog.edges.forEach(edge => {
+          createPage({
             path: `articles/${edge.node.slug}`,
             component: blogPostTemplate,
             context: {
               slug: edge.node.slug
             }
-          })
-        })
-        return
+          });
+        });
+        return;
       })
-    )
-  })
-}
+    );
+  });
+};
 
 exports.onPostBuild = () => {
   fs.copySync(
-    './node_modules/focus-visible/dist/focus-visible.min.js',
-    './public/focus-visible.min.js'
-  )
-}
+    "./node_modules/focus-visible/dist/focus-visible.min.js",
+    "./public/focus-visible.min.js"
+  );
+};

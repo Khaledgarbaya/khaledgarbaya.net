@@ -5,3 +5,6 @@ http://khaledgarbaya.netlify.com/* http://khaledgarbaya.net/:splat 301!
 # also redirect http to https for your custom domain.
 # Note that netlify automatically redirects to your custom domain from the bare domain (or vice versa), so you only need one rule here.
 http://khaledgarbaya.net/* https://khaledgarbaya.net/:splat 301!
+
+# talks
+https://k4d.dev/talk/cra-vs-gatsby https://speakerdeck.com/kgarbaya/gatsby-as-a-replacement-for-create-react-app
