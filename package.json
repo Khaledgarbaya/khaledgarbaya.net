@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Khaled Garbaya<khaledgarbaya@gmail.com>",
   "dependencies": {
-    "@jlengstorf/get-share-image": "0.4.0",
+    "@jlengstorf/get-share-image": "0.7.1",
     "focus-visible": "^5.0.2",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.0.0",
