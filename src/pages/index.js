@@ -1,25 +1,25 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import React from 'react'
+import {Link, graphql} from 'gatsby'
+import PropTypes from 'prop-types'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
-const Article = ({ data }) => {
+const Article = ({data}) => {
   return (
     <li className="py-4 mb-5 border-b">
       <Link
         className="text-gray-800 hover:text-teal-600"
         to={`/articles/${data.slug}`}
       >
-        <h2 className="text-2xl font-heading">{data.title}</h2>
+        <h2 className="text-3xl font-heading my-5">{data.title}</h2>
       </Link>
-      <span className="inline-block text-sm text-gray-700 border-b broder">
+      <span className="inline-block text-sm text-gray-700 border-b broder mb-5">
         <time>{data.publishDate}</time>
       </span>
       <div
-        className="py-4 text-sm text-gray-800"
+        className="prose prose-lg mb-5"
         dangerouslySetInnerHTML={{
-          __html: data.content.childMarkdownRemark.excerpt
+          __html: data.description.childMarkdownRemark.html,
         }}
       />
       <small>
@@ -31,18 +31,18 @@ const Article = ({ data }) => {
         </Link>
       </small>
     </li>
-  );
-};
-const IndexPage = ({ data }) => {
-  const { nodes } = data.allContentfulBlog;
+  )
+}
+const IndexPage = ({data}) => {
+  const {nodes} = data.allContentfulBlog
   return (
     <Layout>
       <SEO
         postData={{
-          frontmatter: {}
+          frontmatter: {},
         }}
       />
-      <div className="max-w-screen-lg mx-auto p-8">
+      <div className="max-w-screen-md mx-auto p-8">
         <ul className="list-none">
           {nodes.map((node, i) => (
             <Article key={i} data={node} />
@@ -50,19 +50,24 @@ const IndexPage = ({ data }) => {
         </ul>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 IndexPage.propTypes = {
-  pageContext: PropTypes.object.isRequired
-};
+  pageContext: PropTypes.object.isRequired,
+}
 export const query = graphql`
   {
-    allContentfulBlog(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlog(sort: {fields: [publishDate], order: DESC}) {
       nodes {
         title
         slug
         publishDate(formatString: "dddd, MMM Do YYYY")
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
         content {
           childMarkdownRemark {
             excerpt
@@ -71,5 +76,5 @@ export const query = graphql`
       }
     }
   }
-`;
-export default IndexPage;
+`
+export default IndexPage

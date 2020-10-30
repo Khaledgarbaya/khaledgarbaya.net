@@ -1,9 +1,9 @@
-import React from "react";
-import * as PropTypes from "prop-types";
-import Layout from "../components/Layout";
-import { graphql } from "gatsby";
+import React from 'react'
+import * as PropTypes from 'prop-types'
+import Layout from '../components/Layout'
+import {graphql} from 'gatsby'
 
-const AboutPage = ({ data }) => (
+const AboutPage = ({data}) => (
   <Layout>
     <div className="container mx-auto p-8 flex flex-wrap">
       <div className="p-6">
@@ -13,26 +13,26 @@ const AboutPage = ({ data }) => (
         />
       </div>
       <div
-        className="p-6"
+        className="prose prose-xl"
         dangerouslySetInnerHTML={{
           __html:
             data.allContentfulLandingPage.edges[0].node.content
-              .childMarkdownRemark.html
+              .childMarkdownRemark.html,
         }}
       />
     </div>
   </Layout>
-);
+)
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired
-};
+  data: PropTypes.object.isRequired,
+}
 
-export default AboutPage;
+export default AboutPage
 
 export const pageQuery = graphql`
   query AboutPageQuery {
-    allContentfulLandingPage(filter: { slug: { eq: "about" } }) {
+    allContentfulLandingPage(filter: {slug: {eq: "about"}}) {
       edges {
         node {
           content {
@@ -49,4 +49,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

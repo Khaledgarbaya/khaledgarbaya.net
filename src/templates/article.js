@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import SEO from "../components/SEO";
-import SubscriptionForm from "../components/SubscriptionForm";
-import Layout from "../components/Layout";
-import { graphql } from "gatsby";
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import SEO from '../components/SEO'
+import SubscriptionForm from '../components/SubscriptionForm'
+import Layout from '../components/Layout'
+import {graphql} from 'gatsby'
 
 class ArticleTemplate extends Component {
   render() {
@@ -13,8 +13,8 @@ class ArticleTemplate extends Component {
       content,
       featureImage,
       publishDate,
-      author
-    } = this.props.data.contentfulBlog;
+      author,
+    } = this.props.data.contentfulBlog
     return (
       <Layout>
         <div className="p-8">
@@ -26,20 +26,20 @@ class ArticleTemplate extends Component {
                 slug,
                 publishDate,
                 title,
-                description: content.childMarkdownRemark.excerpt
-              }
+                description: content.childMarkdownRemark.excerpt,
+              },
             }}
             isBlogPost
           />
 
           <h2 className="text-3xl font-heading">{title}</h2>
           <span className="inline-block text-sm text-gray-700 border-b broder">
-            Published: <time>{publishDate}</time>{" "}
+            Published: <time>{publishDate}</time>{' '}
           </span>
-          <div className="font-body">
+          <div className="prose prose-xl container mx-auto">
             <section
               dangerouslySetInnerHTML={{
-                __html: content.childMarkdownRemark.html
+                __html: content.childMarkdownRemark.html,
               }}
               className="w-full"
             />
@@ -56,7 +56,7 @@ class ArticleTemplate extends Component {
                 <div
                   className="px-4"
                   dangerouslySetInnerHTML={{
-                    __html: author.bio.childMarkdownRemark.html
+                    __html: author.bio.childMarkdownRemark.html,
                   }}
                 />
               </div>
@@ -64,19 +64,19 @@ class ArticleTemplate extends Component {
           </div>
         </div>
       </Layout>
-    );
+    )
   }
 }
 
 ArticleTemplate.propTypes = {
-  data: PropTypes.object.isRequired
-};
+  data: PropTypes.object.isRequired,
+}
 
-export default ArticleTemplate;
+export default ArticleTemplate
 
 export const pageQuery = graphql`
   query articleQuery($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+    contentfulBlog(slug: {eq: $slug}) {
       title
       slug
       publishDate(formatString: "dddd, MMM Do YYYY")
@@ -107,4 +107,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
