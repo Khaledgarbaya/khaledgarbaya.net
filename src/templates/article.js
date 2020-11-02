@@ -5,6 +5,38 @@ import SubscriptionForm from '../components/SubscriptionForm'
 import Layout from '../components/Layout'
 import {graphql} from 'gatsby'
 
+import {motion} from 'framer-motion'
+// Our custom easing
+let easing = [0.6, -0.05, 0.01, 0.99]
+
+// animate: defines animation
+// initial: defines initial state of animation or stating point.
+// exit: defines animation when component exits
+
+// Custom variant
+const fadeInLeft = {
+  initial: {
+    x: 200,
+    opacity: 0,
+    transition: {duration: 0.6, ease: easing},
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+}
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
 class ArticleTemplate extends Component {
   render() {
     const {
@@ -16,8 +48,13 @@ class ArticleTemplate extends Component {
       author,
     } = this.props.data.contentfulBlog
     return (
-      <Layout>
-        <div className="p-8">
+      <Layout location={this.props.location}>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit={{opacity: 0}}
+          className="p-8"
+        >
           <SEO
             key={`seo-${slug}`}
             postImage={featureImage ? `https:${featureImage.file.url}` : null}
@@ -31,19 +68,28 @@ class ArticleTemplate extends Component {
             }}
             isBlogPost
           />
-
-          <h2 className="text-3xl font-heading">{title}</h2>
-          <span className="inline-block text-sm text-gray-700 border-b broder">
-            Published: <time>{publishDate}</time>{' '}
-          </span>
-          <div className="prose prose-xl container mx-auto">
-            <section
-              dangerouslySetInnerHTML={{
-                __html: content.childMarkdownRemark.html,
-              }}
-              className="w-full"
-            />
-          </div>
+          <motion.div variants={stagger}>
+            <motion.h2 variants={fadeInLeft} className="text-3xl font-heading">
+              {title}
+            </motion.h2>
+            <motion.span
+              variants={fadeInLeft}
+              className="inline-block text-sm text-gray-700 border-b broder"
+            >
+              Published: <time>{publishDate}</time>{' '}
+            </motion.span>
+            <motion.div
+              variants={fadeInLeft}
+              className="prose prose-xl container mx-auto"
+            >
+              <section
+                dangerouslySetInnerHTML={{
+                  __html: content.childMarkdownRemark.html,
+                }}
+                className="w-full"
+              />
+            </motion.div>
+          </motion.div>
           <div className="text-sm text-gray">
             <SubscriptionForm />
           </div>
@@ -62,7 +108,7 @@ class ArticleTemplate extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Layout>
     )
   }
@@ -70,6 +116,7 @@ class ArticleTemplate extends Component {
 
 ArticleTemplate.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object,
 }
 
 export default ArticleTemplate
