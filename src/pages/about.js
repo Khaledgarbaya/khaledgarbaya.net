@@ -3,8 +3,8 @@ import * as PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import {graphql} from 'gatsby'
 
-const AboutPage = ({data}) => (
-  <Layout>
+const AboutPage = ({data, location}) => (
+  <Layout location={location}>
     <div className="container mx-auto p-8 flex flex-wrap">
       <div className="p-6">
         <img

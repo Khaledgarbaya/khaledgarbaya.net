@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "gatsby-link";
-import Layout from "../components/Layout";
+import React from 'react'
+import Link from 'gatsby-link'
+import Layout from '../components/Layout'
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = ({location}) => (
+  <Layout location={location}>
     <div className="container mx-auto p-8">
       <h1 className="text-4xl"> Oups.. </h1>
       <div className="notFound__text">
@@ -21,6 +21,6 @@ const NotFoundPage = () => (
       </div>
     </div>
   </Layout>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage

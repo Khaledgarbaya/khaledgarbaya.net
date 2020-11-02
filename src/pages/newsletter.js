@@ -1,8 +1,8 @@
-import React from "react";
-import Layout from "../components/Layout";
-import SubscriptionForm from "../components/SubscriptionForm";
-const NewsletterPage = () => (
-  <Layout>
+import React from 'react'
+import Layout from '../components/Layout'
+import SubscriptionForm from '../components/SubscriptionForm'
+const NewsletterPage = ({location}) => (
+  <Layout location={location}>
     <div className="container p-8 mx-auto">
       <div>
         <h1 className="text-2xl text-center">
@@ -19,6 +19,6 @@ const NewsletterPage = () => (
       </div>
     </div>
   </Layout>
-);
+)
 
-export default NewsletterPage;
+export default NewsletterPage
