@@ -6143,10 +6143,10 @@ gatsby-plugin-facebook-pixel@^1.0.5:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-facebook-pixel/-/gatsby-plugin-facebook-pixel-1.0.5.tgz#521e52db23a75fa27a55d03d23917cb3edb3391d"
   integrity sha512-EFozZ47iskV1zIfNz7XGYGYhh0Mhfi9S1rswbRPefnc0s/NhQqVa45Ky82eM2M8yxiICS3BAmI1rS5dFDDNT7Q==
 
-gatsby-plugin-feed@^2.5.20:
-  version "2.5.20"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.5.20.tgz#a4dba4eddb4786028956933853382872a0adc362"
-  integrity sha512-JNSPLddBuu12Le6/0Es8KcgZgqy40+BmgcFGVPDBdT3oRsp/AtWWNMDvOoXU+avdObzyB3l1IkMbSBSmUxTSMg==
+gatsby-plugin-feed@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.6.0.tgz#b5b1cf428011b457e31419e978614c6436740921"
+  integrity sha512-BxsFwp5tJVew4Asf6NOP2ebhonjBDL0CuQT5HaRzuDjBj9N1/Bc5VRfYQpFy25wj+qQ5CMm5rJWkNGVVwl9//A==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@hapi/joi" "^15.1.1"
