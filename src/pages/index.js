@@ -81,11 +81,14 @@ const IndexPage = ({data, location}) => {
         }}
       />
       <div className="w-full border-b-2 border-teal-300">
-        <div className="p-8 mx-auto max-w-screen-md flex justify-between items-center">
-          <div>
-            <h1 className="text-4xl font-extrabold"> Khaled Garbaya </h1>
-            <p> Doing javascript and stuff.. </p>
-            <ul className="flex items-center justify-between">
+        <div className="p-8 mx-auto flex justify-between items-center flex-wrap">
+          <div className="w-full md:w-2/3 px-8">
+            <h1 className="text-6xl font-extrabold"> Khaled Garbaya </h1>
+            <p className="text-lg">
+              I build real projects from start to finish using the JAMStack, and
+              I teach you how to do build it along the way
+            </p>
+            <ul className="flex items-center gap-4">
               <li>
                 <a
                   className="hover:text-teal-400"
@@ -200,8 +203,8 @@ const IndexPage = ({data, location}) => {
               </li>
             </ul>
           </div>
-          <div>
-            <img class="w-64 h-64 mx-auto" src="/logo.svg" alt="logo" />
+          <div className="w-full md:w-1/3">
+            <img class="w-full h-auto mx-auto" src="/logo.svg" alt="logo" />
           </div>
         </div>
       </div>
