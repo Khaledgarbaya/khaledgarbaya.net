@@ -93,7 +93,7 @@ class ArticleTemplate extends Component {
           <div className="text-sm text-gray">
             <SubscriptionForm />
           </div>
-          <div className="container mx-auto mt-4 mt-5 text-sm text-gray-700">
+          <div className="container mx-auto mt-5 text-sm text-gray-700">
             <div className="flex flex-wrap">
               <div className="rounded-full overflow-hidden w-24 h-24">
                 <img src={author.avatar.file.url} alt={author.avatar.title} />

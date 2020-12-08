@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import SubscriptionForm from '../components/SubscriptionForm'
+import {BlockSignupForm} from '../components/SubscriptionForm'
 const NewsletterPage = ({location}) => (
   <Layout location={location}>
     <div className="container p-8 mx-auto">
@@ -15,7 +15,7 @@ const NewsletterPage = ({location}) => (
         </p>
       </div>
       <div className="mt-16">
-        <SubscriptionForm teaser="Receive the next one in your inbox! No spam, just content." />
+        <BlockSignupForm teaser="Receive the next one in your inbox! No spam, just content." />
       </div>
     </div>
   </Layout>
