@@ -83,12 +83,19 @@ const IndexPage = ({data, location}) => {
       <div className="w-full border-b-2 border-teal-300">
         <div className="p-8 mx-auto flex justify-between items-center flex-wrap-reverse">
           <div className="w-full mt-6 md:w-2/3 px-8">
-            <h1 className="text-6xl font-extrabold"> Khaled Garbaya </h1>
+            <h1 className="text-2xl sm:text-6xl font-extrabold">
+              Khaled Garbaya
+            </h1>
             <p className="text-lg">
               I build real projects from start to finish using the JAMStack, and
               I teach you how to do build it along the way
             </p>
-            <ul className="flex items-center gap-4">
+
+            <InlineSignupForm />
+          </div>
+          <div className="w-full md:w-1/3 flex flex-col items-center justify-center  px-8">
+            <img className="w-full h-auto mx-auto" src="/logo.svg" alt="logo" />
+            <ul className="flex items-center gap-4 mt-5">
               <li>
                 <a
                   className="hover:text-teal-400"
@@ -99,7 +106,7 @@ const IndexPage = ({data, location}) => {
                     className="w-8 h-auto"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 512 512"
                   >
                     <title>Twitter</title>
@@ -117,7 +124,7 @@ const IndexPage = ({data, location}) => {
                     className="w-8 h-auto"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 576 512"
                   >
                     <title className="ir">Youtube</title>
@@ -135,7 +142,7 @@ const IndexPage = ({data, location}) => {
                     className="w-8 h-auto"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 512 512"
                   >
                     <title>Twitch</title>
@@ -153,7 +160,7 @@ const IndexPage = ({data, location}) => {
                     className="w-8 h-auto"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 496 512"
                   >
                     <title>GitHub</title>
@@ -172,7 +179,7 @@ const IndexPage = ({data, location}) => {
                     className="w-8 h-auto"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 448 512"
                   >
                     <title>Instagram</title>
@@ -190,10 +197,10 @@ const IndexPage = ({data, location}) => {
                     className="w-8 h-auto"
                     stroke="currentColor"
                     fill="none"
-                    stroke-width="2"
+                    strokeWidth="2"
                     viewBox="0 0 24 24"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
@@ -202,10 +209,6 @@ const IndexPage = ({data, location}) => {
                 </a>
               </li>
             </ul>
-            <InlineSignupForm />
-          </div>
-          <div className="w-full md:w-1/3">
-            <img className="w-full h-auto mx-auto" src="/logo.svg" alt="logo" />
           </div>
         </div>
       </div>

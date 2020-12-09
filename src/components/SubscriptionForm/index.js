@@ -5,6 +5,7 @@ const InlineForm = ({status, message, onValidated}) => {
   const submit = (e) => {
     e.preventDefault()
     e.stopPropagation()
+    console.log('submitting')
     if (email && email.indexOf('@') > -1) {
       onValidated({
         EMAIL: email,
@@ -19,6 +20,17 @@ const InlineForm = ({status, message, onValidated}) => {
       className="mt-6 w-full"
       onSubmit={submit}
     >
+      {status === 'sending' && (
+        <div className="text-blue-500 p-4">sending...</div>
+      )}
+      {status === 'error' && (
+        <div
+          className="text-red-600 p-4"
+          dangerouslySetInnerHTML={{__html: message}}
+        ></div>
+      )}
+      {status === 'success' && <div className="text-teal-500 p-4">Thanks!</div>}
+
       <div className="sm:focus-within:shadow-outline rounded-lg">
         <div className="sm:flex sm:shadow sm:rounded-lg sm:overflow-hidden">
           <input type="hidden" value="1" name="embed" />
@@ -30,7 +42,10 @@ const InlineForm = ({status, message, onValidated}) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="text-sm shadow sm:shadow-none block w-full sm:w-auto rounded-lg sm:rounded-none focus:outline-none bg-teal-500 hover:bg-teal-700 text-white text-shadow uppercase tracking-wide font-semibold px-6 py-4 lg:py-5">
+          <button
+            disabled={status && status === 'sending'}
+            className="text-sm shadow sm:shadow-none block w-full sm:w-auto rounded-lg sm:rounded-none focus:outline-none bg-teal-500 hover:bg-teal-700 text-white text-shadow uppercase tracking-wide font-semibold px-6 py-4 lg:py-5"
+          >
             Let's build somthing cool
           </button>
         </div>
