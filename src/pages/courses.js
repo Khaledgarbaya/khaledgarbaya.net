@@ -40,6 +40,7 @@ const CoursesPage = ({data, location}) => (
       {data.allContentfulCourses.nodes.map((course) => (
         <Card
           title={course.title}
+          key={course.contentful_id}
           picture={course.image}
           externalLink={course.url}
           domain={new URL(course.url).hostname}
@@ -55,6 +56,7 @@ export const pageQuery = graphql`
   query CoursesQuery {
     allContentfulCourses(sort: {order: DESC, fields: createdAt}) {
       nodes {
+        contentful_id
         url
         title
         description

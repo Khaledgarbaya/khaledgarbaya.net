@@ -1,11 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import '../../styles/tailwind.css'
 import {AnimatePresence} from 'framer-motion'
-const duration = 0.5
 
 const Layout = ({children, location}) => (
   <div className="bg-gray-100">
