@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import SEO from '../components/SEO'
-import SubscriptionForm from '../components/SubscriptionForm'
+import {BlockSignupForm} from '../components/SubscriptionForm'
 import Layout from '../components/Layout'
 import {graphql} from 'gatsby'
 
@@ -91,7 +91,7 @@ class ArticleTemplate extends Component {
             </motion.div>
           </motion.div>
           <div className="text-sm text-gray">
-            <SubscriptionForm />
+            <BlockSignupForm />
           </div>
           <div className="container mx-auto mt-5 text-sm text-gray-700">
             <div className="flex flex-wrap">

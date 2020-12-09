@@ -1,5 +1,8 @@
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.js', './src/**/*.jsx'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {},
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

@@ -8,7 +8,7 @@ import {AnimatePresence} from 'framer-motion'
 const duration = 0.5
 
 const Layout = ({children, location}) => (
-  <div>
+  <div className="bg-gray-100">
     <Helmet
       title="Khaled Garbaya - doing Javascript and stuff!"
       script={[

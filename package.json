@@ -5,6 +5,7 @@
   "author": "Khaled Garbaya<khaledgarbaya@gmail.com>",
   "dependencies": {
     "@jlengstorf/get-share-image": "0.7.1",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.2.0",
     "focus-visible": "^5.2.0",
     "framer-motion": "^2.9.4",
