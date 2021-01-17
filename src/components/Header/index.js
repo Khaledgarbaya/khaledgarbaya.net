@@ -35,26 +35,19 @@ const Header = () => {
             isOpen ? "" : "hidden"
           }`}
         >
-          <Link className="block w-full p-2 text-center sm:w-1/4 href" to="/">
-            Articles
-          </Link>
-
-          <Link
-            className="block w-full p-2 text-center sm:ml-4 sm:w-1/4 href"
-            to="/about"
-          >
+          <Link className="block w-full p-2 sm:ml-4 sm:w-1/3 href" to="/about">
             About
           </Link>
 
           <Link
-            className="block w-full p-2 text-center sm:ml-4 sm:w-1/4 href"
+            className="block w-full p-2 sm:ml-4 sm:w-1/3 href"
             to="/courses"
           >
             Courses
           </Link>
 
           <Link
-            className="p-2 sm:ml-4 w-full block text-center sm:w-1/4 href"
+            className="p-2 sm:ml-4 w-full block sm:w-1/3 href"
             to="/newsletter"
           >
             Newsletter

@@ -11,3 +11,4 @@ package-lock.json
 .cache
 public
 yarn-error.log
+.env
