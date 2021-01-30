@@ -43,6 +43,7 @@ class ArticleTemplate extends Component {
       title,
       slug,
       content,
+      description,
       featureImage,
       publishDate,
       author,
@@ -63,7 +64,7 @@ class ArticleTemplate extends Component {
                 slug,
                 publishDate,
                 title,
-                description: content.childMarkdownRemark.excerpt,
+                description: description.description,
               },
             }}
             isBlogPost
@@ -133,6 +134,9 @@ export const pageQuery = graphql`
           excerpt
         }
       }
+      description {
+          description
+        }
       featureImage {
         file {
           url
