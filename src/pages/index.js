@@ -136,7 +136,7 @@ const IndexPage = ({ data, location }) => {
               <li>
                 <a
                   className="hover:text-teal-400"
-                  href="https://www.twitch.tv/kgarbaya"
+                  href="https://www.twitch.tv/khaled_garbaya"
                   rel="me"
                 >
                   <svg
