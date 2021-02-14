@@ -46,7 +46,7 @@ const InlineForm = ({status, message, onValidated}) => {
             disabled={status && status === 'sending'}
             className="text-sm shadow sm:shadow-none block w-full sm:w-auto rounded-lg sm:rounded-none focus:outline-none bg-teal-500 hover:bg-teal-700 text-white text-shadow uppercase tracking-wide font-semibold px-6 py-4 lg:py-5"
           >
-            Let's build somthing cool
+            Let's build something cool
           </button>
         </div>
       </div>
