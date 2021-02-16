@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import SEO from '../components/SEO'
-import {BlockSignupForm} from '../components/SubscriptionForm'
-import Layout from '../components/Layout'
-import {graphql} from 'gatsby'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import SEO from "../components/SEO";
+import { InlineSignupForm } from "../components/SubscriptionForm";
+import Layout from "../components/Layout";
+import { graphql } from "gatsby";
 
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 // Our custom easing
-let easing = [0.6, -0.05, 0.01, 0.99]
+let easing = [0.6, -0.05, 0.01, 0.99];
 
 // animate: defines animation
 // initial: defines initial state of animation or stating point.
@@ -18,7 +18,7 @@ const fadeInLeft = {
   initial: {
     x: 200,
     opacity: 0,
-    transition: {duration: 0.6, ease: easing},
+    transition: { duration: 0.6, ease: easing },
   },
   animate: {
     x: 0,
@@ -28,7 +28,7 @@ const fadeInLeft = {
       ease: easing,
     },
   },
-}
+};
 
 const stagger = {
   animate: {
@@ -36,7 +36,7 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 class ArticleTemplate extends Component {
   render() {
     const {
@@ -46,13 +46,13 @@ class ArticleTemplate extends Component {
       featureImage,
       publishDate,
       author,
-    } = this.props.data.contentfulBlog
+    } = this.props.data.contentfulBlog;
     return (
       <Layout location={this.props.location}>
         <motion.div
           initial="initial"
           animate="animate"
-          exit={{opacity: 0}}
+          exit={{ opacity: 0 }}
           className="p-8"
         >
           <SEO
@@ -76,11 +76,11 @@ class ArticleTemplate extends Component {
               variants={fadeInLeft}
               className="inline-block text-sm text-gray-700 border-b broder"
             >
-              Published: <time>{publishDate}</time>{' '}
+              Published: <time>{publishDate}</time>{" "}
             </motion.span>
             <motion.div
               variants={fadeInLeft}
-              className="prose prose-xl container mx-auto"
+              className="container mx-auto prose prose-xl"
             >
               <section
                 dangerouslySetInnerHTML={{
@@ -90,8 +90,11 @@ class ArticleTemplate extends Component {
               />
             </motion.div>
           </motion.div>
-          <div className="text-sm text-gray">
-            <BlockSignupForm />
+          <div className="container mx-auto text-sm text-gray">
+            <InlineSignupForm
+              teaser="Enjoyed the content? Receive the next one in your inbox! No spam, just content."
+              cta="Subscribe"
+            />
           </div>
           <div className="container mx-auto mt-5 text-sm text-gray-700">
             <div className="flex flex-wrap">
@@ -110,20 +113,20 @@ class ArticleTemplate extends Component {
           </div>
         </motion.div>
       </Layout>
-    )
+    );
   }
 }
 
 ArticleTemplate.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object,
-}
+};
 
-export default ArticleTemplate
+export default ArticleTemplate;
 
 export const pageQuery = graphql`
   query articleQuery($slug: String!) {
-    contentfulBlog(slug: {eq: $slug}) {
+    contentfulBlog(slug: { eq: $slug }) {
       title
       slug
       publishDate(formatString: "dddd, MMM Do YYYY")
@@ -154,4 +157,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
