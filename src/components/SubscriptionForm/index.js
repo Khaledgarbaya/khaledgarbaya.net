@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-const InlineForm = ({ status, cta, message, onValidated }) => {
-  const [email, setEmail] = useState("");
+import React, {useState} from 'react'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
+const InlineForm = ({status, cta, message, onValidated}) => {
+  const [email, setEmail] = useState('')
   const submit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log("submitting");
-    if (email && email.indexOf("@") > -1) {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log('submitting')
+    if (email && email.indexOf('@') > -1) {
       onValidated({
         EMAIL: email,
-      });
+      })
     }
-  };
+  }
   return (
     <form
       action="https://app.convertkit.com/forms/1036024/subscriptions"
@@ -20,16 +20,16 @@ const InlineForm = ({ status, cta, message, onValidated }) => {
       className="w-full mt-6"
       onSubmit={submit}
     >
-      {status === "sending" && (
+      {status === 'sending' && (
         <div className="p-4 text-blue-500">sending...</div>
       )}
-      {status === "error" && (
+      {status === 'error' && (
         <div
           className="p-4 text-red-600"
-          dangerouslySetInnerHTML={{ __html: message }}
+          dangerouslySetInnerHTML={{__html: message}}
         ></div>
       )}
-      {status === "success" && <div className="p-4 text-teal-500">Thanks!</div>}
+      {status === 'success' && <div className="p-4 text-teal-500">Thanks!</div>}
 
       <div className="rounded-lg sm:focus-within:shadow-outline">
         <div className="sm:flex sm:shadow sm:rounded-lg sm:overflow-hidden">
@@ -43,33 +43,33 @@ const InlineForm = ({ status, cta, message, onValidated }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
-            disabled={status && status === "sending"}
+            disabled={status && status === 'sending'}
             className="block w-full px-6 py-4 text-sm font-semibold tracking-wide text-white uppercase bg-teal-500 rounded-lg shadow sm:shadow-none sm:w-auto sm:rounded-none focus:outline-none hover:bg-teal-700 text-shadow lg:py-5"
           >
-            {cta}{" "}
+            {cta}
           </button>
         </div>
       </div>
     </form>
-  );
-};
+  )
+}
 
-const CustomForm = ({ status, message, onValidated }) => {
-  let email;
+const CustomForm = ({status, message, onValidated}) => {
+  let email
   const submit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (email && email.value.indexOf("@") > -1) {
+    e.preventDefault()
+    e.stopPropagation()
+    if (email && email.value.indexOf('@') > -1) {
       onValidated({
         EMAIL: email.value,
-      });
+      })
     }
-  };
+  }
   return (
     <form onSubmit={submit}>
-      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-      {status === "error" && <div style={{ color: "red" }}>{message}</div>}
-      {status === "success" && <div style={{ color: "green" }}>Thanks!</div>}
+      {status === 'sending' && <div style={{color: 'blue'}}>sending...</div>}
+      {status === 'error' && <div style={{color: 'red'}}>{message}</div>}
+      {status === 'success' && <div style={{color: 'green'}}>Thanks!</div>}
       <input
         ref={(node) => (email = node)}
         type="email"
@@ -81,17 +81,17 @@ const CustomForm = ({ status, message, onValidated }) => {
         Start Learning!
       </button>
     </form>
-  );
-};
+  )
+}
 const BlockSignupForm = ({
-  teaser = "Enjoyed the content? Receive the next one in your inbox! No spam, just content.",
+  teaser = 'Enjoyed the content? Receive the next one in your inbox! No spam, just content.',
 }) => {
   return (
     <section className="w-full max-w-md p-6 mx-auto my-4 border-t-4 border-teal-600 border-solid rounded shadow to">
       <p className="p-4 text-sm text-gray-700">{teaser}</p>
       <MailchimpSubscribe
         url="https://statilix.us16.list-manage.com/subscribe/post?u=19b98089cf0ee082f3fef5efd&amp;id=5392031228"
-        render={({ subscribe, status, message }) => (
+        render={({subscribe, status, message}) => (
           <CustomForm
             status={status}
             message={message}
@@ -100,16 +100,16 @@ const BlockSignupForm = ({
         )}
       />
     </section>
-  );
-};
+  )
+}
 const InlineSignupForm = ({
-  teaser = "",
+  teaser = '',
   cta = "Let's build something cool",
 }) => {
   return (
     <MailchimpSubscribe
       url="https://statilix.us16.list-manage.com/subscribe/post?u=19b98089cf0ee082f3fef5efd&amp;id=5392031228"
-      render={({ subscribe, status, message }) => (
+      render={({subscribe, status, message}) => (
         <div className="max-w-3xl mx-auto">
           {teaser ? (
             <p className="text-sm text-gray-700 p-4">{teaser}</p>
@@ -123,6 +123,6 @@ const InlineSignupForm = ({
         </div>
       )}
     />
-  );
-};
-export { BlockSignupForm, InlineSignupForm };
+  )
+}
+export {BlockSignupForm, InlineSignupForm}
