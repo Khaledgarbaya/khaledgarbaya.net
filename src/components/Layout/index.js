@@ -6,7 +6,7 @@ import '../../styles/tailwind.css'
 import {AnimatePresence} from 'framer-motion'
 
 const Layout = ({children, location}) => (
-  <div className="bg-gray-100">
+  <div className="bg-teal-50">
     <Helmet
       title="Khaled Garbaya - doing Javascript and stuff!"
       script={[
@@ -61,7 +61,7 @@ const Layout = ({children, location}) => (
       ]}
     />
     <AnimatePresence>
-      <div className="max-w-screen-lg mx-auto container">
+      <div className="">
         <Header />
         {children}
         <Footer />

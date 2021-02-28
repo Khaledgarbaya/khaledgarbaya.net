@@ -1,24 +1,22 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import { motion } from "framer-motion";
-import { InlineSignupForm } from "../components/SubscriptionForm";
-import CoursesCollection from "../components/CoursesCollection";
+import React from 'react'
+import {Link, graphql} from 'gatsby'
+import PropTypes from 'prop-types'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import {motion} from 'framer-motion'
+import {InlineSignupForm} from '../components/SubscriptionForm'
+import CoursesCollection from '../components/CoursesCollection'
+import Wave from '../components/Wave'
+import WaveUpsideDown from '../components/WaveUpsideDown'
 // Our custom easing
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-// animate: defines animation
-// initial: defines initial state of animation or stating point.
-// exit: defines animation when component exits
+let easing = [0.6, -0.05, 0.01, 0.99]
 
 // Custom variant
 const fadeInUp = {
   initial: {
     y: 60,
     opacity: 0,
-    transition: { duration: 0.6, ease: easing },
+    transition: {duration: 0.6, ease: easing},
   },
   animate: {
     y: 0,
@@ -28,7 +26,7 @@ const fadeInUp = {
       ease: easing,
     },
   },
-};
+}
 
 const stagger = {
   animate: {
@@ -36,14 +34,14 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
-};
+}
 
-const Article = ({ data }) => {
+const Article = ({data}) => {
   return (
     <motion.li
       variants={fadeInUp}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{scale: 1.05}}
+      whileTap={{scale: 0.95}}
       className="py-4 mb-5 border-b"
     >
       <Link
@@ -70,10 +68,10 @@ const Article = ({ data }) => {
         </Link>
       </small>
     </motion.li>
-  );
-};
-const IndexPage = ({ data, location }) => {
-  const { nodes } = data.allContentfulBlog;
+  )
+}
+const IndexPage = ({data, location}) => {
+  const {nodes} = data.allContentfulBlog
   return (
     <Layout location={location}>
       <SEO
@@ -81,11 +79,11 @@ const IndexPage = ({ data, location }) => {
           frontmatter: {},
         }}
       />
-      <div className="w-full border-b-2 border-teal-300">
-        <div className="flex flex-wrap-reverse items-center justify-between p-8 mx-auto">
+      <div className="w-full mb-5">
+        <div className="flex flex-wrap-reverse items-center justify-between p-8 max-w-screen-lg mx-auto container">
           <div className="w-full px-8 mt-6 md:w-2/3">
-            <h1 className="text-2xl font-extrabold sm:text-6xl">
-              Khaled Garbaya
+            <h1 className="text-2xl font-extrabold sm:text-3xl">
+              Hello, I'm Khaled Garbaya
             </h1>
             <p className="text-lg">
               I build real projects from start to finish using the JAMStack, and
@@ -95,8 +93,12 @@ const IndexPage = ({ data, location }) => {
             <InlineSignupForm />
           </div>
           <div className="flex flex-col items-center justify-center w-full px-8 md:w-1/3">
-            <img className="w-full h-auto mx-auto" src="/logo.svg" alt="logo" />
-            <ul className="flex items-center gap-4 mt-5">
+            <img
+              className="w-full h-auto mx-auto"
+              src="/hero_avatar.svg"
+              alt="logo"
+            />
+            <ul className="flex items-center mt-5 gap-4">
               <li>
                 <a
                   className="hover:text-teal-400"
@@ -212,35 +214,45 @@ const IndexPage = ({ data, location }) => {
             </ul>
           </div>
         </div>
-        <div className="p-8 mx-auto">
-          <h2 className="text-3xl font-heading">Latest Courses</h2>
+      </div>
+
+      <div className="bg-white">
+        <Wave />
+        <div className="max-w-screen-lg mx-auto container p-8">
+          <h2 className="text-3xl font-heading bg-clip-text bg-teal-50 text-transparent bg-gradient-to-r from-teal-500 to-teal-300 font-heading text-5xl">
+            Latest Courses
+          </h2>
           <CoursesCollection courses={data.allContentfulCourses.nodes} />
         </div>
+        <WaveUpsideDown />
       </div>
-      <motion.div
-        initial="initial"
-        animate="animate"
-        exit={{ opacity: 0 }}
-        className="p-8 mx-auto max-w-screen-md"
-      >
-        <motion.ul variants={stagger} className="list-none">
-          {nodes.map((node, i) => (
-            <Article key={i} data={node} />
-          ))}
-        </motion.ul>
-      </motion.div>
+
+      <div>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit={{opacity: 0}}
+          className="p-8 mx-auto max-w-screen-md"
+        >
+          <motion.ul variants={stagger} className="list-none">
+            {nodes.map((node, i) => (
+              <Article key={i} data={node} />
+            ))}
+          </motion.ul>
+        </motion.div>
+      </div>
     </Layout>
-  );
-};
+  )
+}
 
 IndexPage.propTypes = {
   pageContext: PropTypes.object.isRequired,
-};
+}
 export const query = graphql`
   {
     allContentfulCourses(
-      filter: { featured: { eq: true } }
-      sort: { fields: createdAt, order: DESC }
+      filter: {featured: {eq: true}}
+      sort: {fields: createdAt, order: DESC}
     ) {
       nodes {
         contentful_id
@@ -254,7 +266,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulBlog(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlog(sort: {fields: [publishDate], order: DESC}) {
       nodes {
         title
         slug
@@ -272,5 +284,5 @@ export const query = graphql`
       }
     }
   }
-`;
-export default IndexPage;
+`
+export default IndexPage

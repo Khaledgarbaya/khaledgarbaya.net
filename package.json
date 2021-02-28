@@ -20,7 +20,6 @@
     "gatsby-plugin-manifest": "^2.5.2",
     "gatsby-plugin-netlify": "^2.4.0",
     "gatsby-plugin-offline": "^3.3.2",
-    "gatsby-plugin-postcss": "^3.0.4",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.4.2",
@@ -49,8 +48,11 @@
     "develop": "gatsby develop"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "gatsby-plugin-postcss": "^3.7.0",
+    "postcss": "^8.2.6",
     "prettier": "^2.1.2",
     "subfont": "5.2.2",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.0.3"
   }
 }

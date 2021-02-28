@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
+import React, {useState} from 'react'
+import {Link} from 'gatsby'
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <header className="container items-center justify-between p-4 mx-auto sm:flex">
@@ -32,30 +32,43 @@ const Header = () => {
         </div>
         <nav
           className={`sm:flex sm:items-center sm:block ${
-            isOpen ? "" : "hidden"
+            isOpen ? '' : 'hidden'
           }`}
         >
-          <Link className="block w-full p-2 sm:ml-4 sm:w-1/3 href" to="/about">
+          <Link
+            className="block w-full p-2 sm:ml-4 sm:w-1/3 text-gray-500  border-none uppercase text-sm"
+            to="/about"
+          >
             About
           </Link>
 
           <Link
-            className="block w-full p-2 sm:ml-4 sm:w-1/3 href"
-            to="/courses"
+            className="block w-full p-2 sm:ml-4 sm:w-1/3 text-gray-500 border-none uppercase text-sm"
+            to="/"
           >
-            Courses
+            Blog
           </Link>
 
           <Link
-            className="p-2 sm:ml-4 w-full block sm:w-1/3 href"
+            className="p-2 sm:ml-4 w-full block sm:w-1/3 text-gray-500 border-none uppercase text-sm"
             to="/newsletter"
           >
             Newsletter
           </Link>
+          <Link
+            className="p-1 sm:ml-4 w-full block sm:w-1/3 uppercase text-sm  border-none rounded-full bg-gradient-to-r from-teal-500 to-teal-300"
+            to="/courses"
+          >
+            <span className="block bg-teal-50 rounded-full p-2">
+              <span className="px-3 bg-clip-text bg-teal-50 text-transparent bg-gradient-to-r from-teal-500 to-teal-300">
+                Courses
+              </span>
+            </span>
+          </Link>
         </nav>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
