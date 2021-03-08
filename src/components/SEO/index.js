@@ -1,9 +1,8 @@
-import path from "path";
-import React from "react";
-import Helmet from "react-helmet";
-import PropTypes from "prop-types";
-import config from "../../config";
-import getShareImage from "@jlengstorf/get-share-image";
+import React from 'react'
+import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import config from '../../config'
+import getShareImage from '@jlengstorf/get-share-image'
 
 const getSchemaOrgJSONLD = ({
   isBlogPost,
@@ -15,26 +14,26 @@ const getSchemaOrgJSONLD = ({
 }) => {
   const schemaOrgJSONLD = [
     {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
       url,
       name: title,
       alternateName: config.title,
     },
-  ];
+  ]
 
   return isBlogPost
     ? [
         ...schemaOrgJSONLD,
         {
-          "@context": "http://schema.org",
-          "@type": "BreadcrumbList",
+          '@context': 'http://schema.org',
+          '@type': 'BreadcrumbList',
           itemListElement: [
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 1,
               item: {
-                "@id": url,
+                '@id': url,
                 name: title,
                 image,
               },
@@ -42,55 +41,53 @@ const getSchemaOrgJSONLD = ({
           ],
         },
         {
-          "@context": "http://schema.org",
-          "@type": "BlogPosting",
+          '@context': 'http://schema.org',
+          '@type': 'BlogPosting',
           url,
           name: title,
           alternateName: config.title,
           headline: title,
           image: {
-            "@type": "ImageObject",
+            '@type': 'ImageObject',
             url: image,
           },
           description,
           author: {
-            "@type": "Person",
-            name: "Khaled Garbaya",
+            '@type': 'Person',
+            name: 'Khaled Garbaya',
           },
           publisher: {
-            "@type": "Organization",
-            url: "https://khaledgarbaya.net",
+            '@type': 'Organization',
+            url: 'https://khaledgarbaya.net',
             logo: config.logo,
-            name: "Khaled Garbaya",
+            name: 'Khaled Garbaya',
           },
           mainEntityOfPage: {
-            "@type": "WebSite",
-            "@id": config.url,
+            '@type': 'WebSite',
+            '@id': config.url,
           },
           datePublished,
         },
       ]
-    : schemaOrgJSONLD;
-};
+    : schemaOrgJSONLD
+}
 
-const SEO = ({ postData, postImage, isBlogPost }) => {
-  const postMeta = postData.frontmatter || {};
+const SEO = ({postData, postImage, isBlogPost}) => {
+  const postMeta = postData.frontmatter || {}
 
-  const title = postMeta.title || config.title;
+  const title = postMeta.title || config.title
   const description =
-    postMeta.description || postData.excerpt || config.description;
+    postMeta.description || postData.excerpt || config.description
   const image = getShareImage({
     title: title,
-    cloudName: "kgarbaya",
+    cloudName: 'kgarbaya',
     titleBottomOffset: 300,
-    imagePublicID: "k4d-dev-social-card.png",
-    titleFont: "Alegreya_64_black",
-    textColor: "232129",
-  });
-  const url = postMeta.slug
-    ? `${config.url}${path.sep}${postMeta.slug}`
-    : config.url;
-  const datePublished = isBlogPost ? postMeta.datePublished : false;
+    imagePublicID: 'k4d-dev-social-card.png',
+    titleFont: 'Alegreya_64_black',
+    textColor: '232129',
+  })
+  const url = postMeta.slug ? `${config.url}/${postMeta.slug}` : config.url
+  const datePublished = isBlogPost ? postMeta.datePublished : false
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
@@ -99,7 +96,7 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
     image,
     description,
     datePublished,
-  });
+  })
 
   return (
     <Helmet>
@@ -127,8 +124,8 @@ const SEO = ({ postData, postImage, isBlogPost }) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
     </Helmet>
-  );
-};
+  )
+}
 
 SEO.propTypes = {
   isBlogPost: PropTypes.bool,
@@ -137,11 +134,11 @@ SEO.propTypes = {
     excerpt: PropTypes.any,
   }).isRequired,
   postImage: PropTypes.string,
-};
+}
 
 SEO.defaultProps = {
   isBlogPost: false,
   postImage: null,
-};
+}
 
-export default SEO;
+export default SEO

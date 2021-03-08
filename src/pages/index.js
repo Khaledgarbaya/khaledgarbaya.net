@@ -1,13 +1,14 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import { motion } from "framer-motion";
-import { InlineSignupForm } from "../components/SubscriptionForm";
-import CoursesCollection from "../components/CoursesCollection";
+import React from 'react'
+import {Link, graphql} from 'gatsby'
+
+import {motion} from 'framer-motion'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import {InlineSignupForm} from '../components/SubscriptionForm'
+import CoursesCollection from '../components/CoursesCollection'
+
 // Our custom easing
-let easing = [0.6, -0.05, 0.01, 0.99];
+let easing = [0.6, -0.05, 0.01, 0.99]
 
 // animate: defines animation
 // initial: defines initial state of animation or stating point.
@@ -18,7 +19,7 @@ const fadeInUp = {
   initial: {
     y: 60,
     opacity: 0,
-    transition: { duration: 0.6, ease: easing },
+    transition: {duration: 0.6, ease: easing},
   },
   animate: {
     y: 0,
@@ -28,7 +29,7 @@ const fadeInUp = {
       ease: easing,
     },
   },
-};
+}
 
 const stagger = {
   animate: {
@@ -36,14 +37,14 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
-};
+}
 
-const Article = ({ data }) => {
+const Article = ({data}) => {
   return (
     <motion.li
       variants={fadeInUp}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{scale: 1.05}}
+      whileTap={{scale: 0.95}}
       className="py-4 mb-5 border-b"
     >
       <Link
@@ -70,10 +71,10 @@ const Article = ({ data }) => {
         </Link>
       </small>
     </motion.li>
-  );
-};
-const IndexPage = ({ data, location }) => {
-  const { nodes } = data.allContentfulBlog;
+  )
+}
+const Index = ({data, location}) => {
+  const {nodes} = data.allContentfulBlog
   return (
     <Layout location={location}>
       <SEO
@@ -220,7 +221,7 @@ const IndexPage = ({ data, location }) => {
       <motion.div
         initial="initial"
         animate="animate"
-        exit={{ opacity: 0 }}
+        exit={{opacity: 0}}
         className="p-8 mx-auto max-w-screen-md"
       >
         <motion.ul variants={stagger} className="list-none">
@@ -230,17 +231,14 @@ const IndexPage = ({ data, location }) => {
         </motion.ul>
       </motion.div>
     </Layout>
-  );
-};
+  )
+}
 
-IndexPage.propTypes = {
-  pageContext: PropTypes.object.isRequired,
-};
 export const query = graphql`
   {
     allContentfulCourses(
-      filter: { featured: { eq: true } }
-      sort: { fields: createdAt, order: DESC }
+      filter: {featured: {eq: true}}
+      sort: {fields: createdAt, order: DESC}
     ) {
       nodes {
         contentful_id
@@ -254,7 +252,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulBlog(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlog(sort: {fields: [publishDate], order: DESC}) {
       nodes {
         title
         slug
@@ -272,5 +270,5 @@ export const query = graphql`
       }
     }
   }
-`;
-export default IndexPage;
+`
+export default Index
