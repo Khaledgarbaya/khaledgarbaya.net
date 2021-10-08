@@ -226,7 +226,7 @@ const Index = ({data, location}) => {
       >
         <motion.ul variants={stagger} className="list-none">
           {nodes.map((node, i) => (
-            <Article key={i} data={node} />
+            <Article key={node.slug} data={node} />
           ))}
         </motion.ul>
       </motion.div>
