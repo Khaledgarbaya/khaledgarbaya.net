@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const Card = ({ title, externalLink, picture, domain }) => (
+const Card = ({title, externalLink, picture, domain}) => (
   <div className="w-full md:w-1/2 lg:w-1/3 px-3 flex flex-col mb-8">
     <a
       href={externalLink}
@@ -10,7 +10,7 @@ const Card = ({ title, externalLink, picture, domain }) => (
         <div
           className="bg-cover aspect-w-16 aspect-h-9"
           style={{
-            backgroundImage: `url(https:${picture.fixed.src})`,
+            backgroundImage: `url(${picture.fixed.src})`,
           }}
         />
       </div>
@@ -31,9 +31,9 @@ const Card = ({ title, externalLink, picture, domain }) => (
       </div>
     </a>
   </div>
-);
+)
 
-const CoursesCollection = ({ courses }) => {
+const CoursesCollection = ({courses}) => {
   return (
     <div className="container max-w-screen-lg mx-auto p-8 flex flex-wrap">
       {courses.map((course) => (
@@ -46,7 +46,7 @@ const CoursesCollection = ({ courses }) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CoursesCollection;
+export default CoursesCollection
